@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="home.css">
+      <title>Tourism_Malaysia.com</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <header>
+            <nav>
+              <input type="checkbox" id="check">
+              <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+              </label>
+              <a href="#home" class="logo kanit-black-italic">Tourism_Malaysia</a>
+            <ul id="navigation">
+              <li><a href="#home" class="btn active">Home</a></li>
+              <li><a href="#about" class="btn">About</a></li>
+              <li><a href="#menu" class="btn">Menu</a></li>
+              <li><a href="#order" class="btn">Order</a></li>
+              <li><a href="#contact" class="btn">Contact</a></li>
+            </ul>
+          </nav>
+        </header>
+
+        <main class="wrapper">
+            <div class="video-container">
+                <video autoplay muted loop id="bgv">
+                    <source src="background_vid.mp4" type="video/mp4">
+                </video>
+                <div class="overlay"></div>
+            </div>
+
+            <div class="video-info">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/8V7czbc0kxg?autoplay=1&mute=1&loop=1&playlist=8V7czbc0kxg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+        </main>
+
+        <script src="home.js"></script>
+        
+    </body>
+</html>
