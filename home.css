@@ -1,0 +1,124 @@
+header {
+    width: auto;
+    background-color: #9abae6;
+    position: fixed;
+    color: #fff;
+    padding: 0 20px;
+    height: 60px;
+    line-height: 50px;
+    margin: 0 auto;    /* Center the navigation within the header */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    left: 15px;
+    right: 15px;
+    top: 5px;
+    z-index: 2;
+    border-radius: 20px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav a.logo {
+    color: #141416;
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 60px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: .5s;
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+nav ul li {
+    line-height: 60px;
+    margin: 0 20px;
+    line-height: inherit;
+}
+
+nav ul a {
+    color: #fff;
+    font-size: 18px;
+    padding: 5px 13px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: .4s;
+    text-decoration: none;
+}
+
+.active,nav ul a:hover {
+    background: #8492e0;
+    padding: 10px;
+    color: #000;
+}
+
+.checkbtn {
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+
+#wrapper{
+    position: relative;
+    overflow-y: auto;
+}
+
+#bgv {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -2;        /* place behind other content */
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    z-index: -1;
+}
+
+.video-info {
+    display: flex;
+    justify-content: left;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
+    top: 40px;
+}
+
+.video-info iframe {
+    width: 100%;
+    max-width: 60%; /* Optional: set a max-width if desired */
+    height: auto;
+    aspect-ratio: 16/9; /* Maintain 16:9 aspect ratio */
+    border-radius: 10px;
+}
+
+
+.kanit-black-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
