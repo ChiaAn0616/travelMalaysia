@@ -103,14 +103,14 @@ nav ul a {
     padding: 20px;
     position: relative;
     z-index: 1;
-    width: 100%;
+    width: 60%;
     box-sizing: border-box;
     top: 40px;
 }
 
 .video-info iframe {
     width: 100%;
-    max-width: 60%; /* Optional: set a max-width if desired */
+    max-width: 100%; /* Optional: set a max-width if desired */
     height: auto;
     aspect-ratio: 16/9; /* Maintain 16:9 aspect ratio */
     border-radius: 10px;
@@ -121,4 +121,45 @@ nav ul a {
     font-family: "Kanit", sans-serif;
     font-weight: 900;
     font-style: italic;
+}
+
+.kaushan-script-regular {
+    font-family: "Kaushan Script", cursive;
+    font-weight: 400;
+    font-style: normal;
   }
+
+aside{
+    position: fixed;
+    right: 10px;
+    top: 40px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 40%;
+    height: calc(60vw*9/16);
+    z-index: 2;
+
+}
+
+aside p {
+    width: 80%;
+    margin: 40px auto;
+    font-size: 1.5em; /* Adjust as needed */
+    line-height: 2; /* Adjust for readability */
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+#welcome-message{
+    font-size: 4em;
+    text-align: center;
+    margin-top: 5%;
+    transition: opacity 1s ease-in-out, transform 0.3s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+#welcome-message:hover {
+    transform: scale(1.1); /* Increase size by 10% */
+}
