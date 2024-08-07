@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Apply for Trips - Travel Malaysia</title>
+    </head>
+    <style>
+        body {
+         font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+        }
+         .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #00a86b;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            margin: 0;
+        }
+        .trip-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .trip-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            overflow: hidden;
+            width: calc(33.333% - 20px);
+            transition: transform 0.3s ease;
+        }
+        .trip-card:hover {
+            transform: translateY(-5px);
+        }
+        .trip-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        .trip-details {
+            padding: 20px;
+        }
+        .trip-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #00a86b;
+        }
+        .trip-description {
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        .apply-btn {
+            background-color: #00a86b;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .apply-btn:hover {
+            background-color: #008c59;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+        }
+        input, select {
+            margin-bottom: 15px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button[type="submit"] {
+            background-color: #00a86b;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button[type="submit"]:hover {
+            background-color: #008c59;
+        }
+    </style>
+
+
+    <header>
+        <div class="container">
+            <h1>Apply for Trips - Travel Malaysia</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="trip-list">
+            <div class="trip-card">
+                <div class="trip-image" style="background-image: url('images/Langkawi.jpg');"></div>
+                <div class="trip-details">
+                    <h3 class="trip-title">Langkawi Island Getaway</h3>
+                    <p class="trip-description">Experience the beauty of Langkawi's pristine beaches and lush rainforests.</p>
+                    <button class="apply-btn" onclick="openModal('Langkawi Island Getaway')">Apply Now</button>
+                </div>
+            </div>
+            <div class="trip-card">
+                <div class="trip-image" style="background-image: url('images/KL.jpg');"></div>
+                <div class="trip-details">
+                    <h3 class="trip-title">Kuala Lumpur City Explorer</h3>
+                    <p class="trip-description">Discover the vibrant culture and modern marvels of Malaysia's capital city.</p>
+                    <button class="apply-btn" onclick="openModal('Kuala Lumpur City Explorer')">Apply Now</button>
+                </div>
+            </div>
+            <div class="trip-card">
+                <div class="trip-image" style="background-image: url('images/PulauPangkor.jpg');"></div>
+                <div class="trip-details">
+                    <h3 class="trip-title">Pulau Pangkor Island Hopping</h3>
+                    <p class="trip-description">Embark on an exciting journey through the diverse ecosystems of Borneo.</p>
+                    <button class="apply-btn" onclick="openModal('Pulau Pangkor Island Hopping')">Apply Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="applicationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h2 id="modalTitle">Apply for Trip</h2>
+            <form id="applicationForm">
+                <input type="hidden" id="tripName" name="tripName">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required="">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required="">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required="">
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required="">
+                <label for="groupSize">Group Size:</label>
+                <select id="groupSize" name="groupSize" required="">
+                    <option value="">Select group size</option>
+                    <option value="1">1 person</option>
+                    <option value="2">2 people</option>
+                    <option value="3-5">3-5 people</option>
+                    <option value="6+">6 or more people</option>
+                </select>
+                <button type="submit">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal(tripName) {
+            document.getElementById('modalTitle').innerText = `Apply for ${tripName}`;
+            document.getElementById('tripName').value = tripName;
+            document.getElementById('applicationModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('applicationModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('applicationModal')) {
+                closeModal();
+            }
+        }
+
+        document.getElementById('applicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const formObject = {};
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+
+            console.log('Application submitted:', formObject);
+            alert('Thank you for your application! We will contact you soon with further details.');
+            closeModal();
+            this.reset();
+        });
+    </script>
