@@ -11,14 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
             formObject[key] = value;
         });
 
-        // Here you would typically send the data to a server
-        // For this example, we'll just log it to the console
-        console.log('Form submitted:', formObject);
-
         // Show a success message
-        alert('Thank you for your message! We will get back to you soon.');
+        const name = formObject.name;
+        const messageContainer = document.createElement('div');
+        messageContainer.classList.add('thank-you-message');
+        messageContainer.innerHTML = `
+            <h2>Thanks, ${name}!</h2>
+            <p>Our team will reach you soon!</p>
+        `;
 
-        // Clear the form
-        this.reset();
+        // Append the message to the form container
+        const formContainer = document.querySelector('.contact-form');
+        formContainer.innerHTML = '';
+        formContainer.appendChild(messageContainer);
     });
 });
