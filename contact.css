@@ -13,7 +13,7 @@ body {
 }
 
 header {
-    background-color: #00a86b;
+    background-color: #8492e0;
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -52,7 +52,7 @@ input, textarea {
 }
 
 button {
-    background-color: #00a86b;
+    background-color: #e47bae;
     color: white;
     border: none;
     padding: 12px 20px;
@@ -63,7 +63,7 @@ button {
 }
 
 button:hover {
-    background-color: #008c59;
+    background-color: #e74ab8;
 }
 
 .map-container {
@@ -82,7 +82,7 @@ button:hover {
 }
 
 .contact-info h2 {
-    color: #00a86b;
+    color: #8492e0;
 }
 
 .contact-info p {
@@ -96,6 +96,6 @@ button:hover {
 .social-links a {
     display: inline-block;
     margin-right: 10px;
-    color: #00a86b;
+    color: #8492e0;
     font-size: 24px;
 }
