@@ -1,0 +1,40 @@
+<-- make sure you have download the default.css and default.js from GitHub repo -->
+
+
+
+<-- add these two code to apply same background video and navigation bar for all page -->
+
+	 <link rel="stylesheet" type="text/css" href="default.css">  in head**
+	
+ 	 <script src="default.js"></script>  in body**
+
+
+
+
+
+
+<-- also make sure adding this code to create a nav bar -->
+<-- do notice the class(btn active/btn), set btn active for a specific element according to your page -->
+<-- the sample code below is for nav bar of home page -->
+
+<header>
+            <nav>
+
+              <input type="checkbox" id="check">
+
+              <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+              </label>
+
+              <a href="#home" class="logo kanit-black-italic">Tourism_Malaysia</a>
+
+              <ul id="navigation">
+                <li><a href="home_page.html" class="btn active">Home</a></li>
+                <li><a href="#about" class="btn">About</a></li>
+                <li><a href="#menu" class="btn">Menu</a></li>
+                <li><a href="application.html" class="btn">Apply</a></li>
+                <li><a href="contact.html" class="btn">Contact</a></li>
+              </ul>
+
+          </nav>
+</header>
