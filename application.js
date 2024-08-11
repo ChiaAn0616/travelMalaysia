@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const max = new Date(maxDate);
 
         if (inputDate < min || inputDate > max) {
-            alert(`Please enter a date between ${minDate} and ${maxDate}`);
+            alert(`Please enter a date between ${minDate} and ${maxDate} (10 Years)`);
             inputElement.value = '';
             inputElement.focus();
         }
