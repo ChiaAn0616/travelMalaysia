@@ -26,3 +26,22 @@ function changeWelcomeMessage() {
 }
 
 setInterval(changeWelcomeMessage, 2000); // Change every 2 seconds
+
+
+document.querySelectorAll('.image-container').forEach(container =>{
+  container.addEventListener('click',function(){
+    const link = this.getAttribute('data-link');
+    if(link){
+      window.location.href = link;
+    }
+  });
+});
+
+function applyAnimation() {
+  const elements = document.querySelectorAll('.flag-color');
+  elements.forEach(el => {
+      el.style.animation = 'colorCycle 5s infinite'; 
+  });
+}
+
+applyAnimation();
