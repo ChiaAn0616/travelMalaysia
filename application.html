@@ -129,6 +129,41 @@
         </div>
     </div>
 
+    <div id="customTripSection" class="container">
+        <h2>Apply for a Customized Trip</h2>
+        <form id="customTripForm">
+            <label for="customDestination">Destination:</label>
+            <input type="text" id="customDestination" name="customDestination" required>
+    
+            <label for="customStartDate">Start Date:</label>
+            <input type="date" id="customStartDate" name="customStartDate" required>
+    
+            <label for="customEndDate">End Date:</label>
+            <input type="date" id="customEndDate" name="customEndDate" required>
+    
+            <label for="customGroupSize">Group Size:</label>
+            <select id="customGroupSize" name="customGroupSize" required>
+                <option value="">Select group size</option>
+                <option value="1">1 person</option>
+                <option value="2">2 people</option>
+                <option value="3-5">3-5 people</option>
+                <option value="6+">6 or more people</option>
+            </select>
+    
+            <label for="customPlanOption">Who will plan the itinerary?</label>
+            <select id="customPlanOption" name="customPlanOption" required>
+                <option value="">Select an option</option>
+                <option value="self">I will plan the itinerary</option>
+                <option value="travelMalaysia">Travel Malaysia will plan the itinerary</option>
+            </select>
+    
+            <label for="customDetails">Additional Details (optional):</label>
+            <textarea id="customDetails" name="customDetails" rows="4" placeholder="Enter any specific requests or details here..."></textarea>
+    
+            <button type="submit">Submit Customized Trip Application</button>
+        </form>
+    </div>
+
     <script src="application.js"></script>
     <script src="default.js"></script>
 </body>
