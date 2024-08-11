@@ -148,3 +148,48 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #8492e0;
 }
+
+#customTripSection {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+#customTripSection h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#customTripForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#customTripForm label {
+    margin-top: 10px;
+}
+
+#customTripForm input, 
+#customTripForm select, 
+#customTripForm textarea {
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#customTripForm button[type="submit"] {
+    background-color: #8492e0;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#customTripForm button[type="submit"]:hover {
+    background-color: #8492e0;
+}
