@@ -4,8 +4,16 @@
 
 <-- add these two code to apply same background video and navigation bar for all page -->
 
-	 <link rel="stylesheet" type="text/css" href="default.css">  in head**
+
+  In Head::
+	 <link rel="stylesheet" type="text/css" href="default.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 	
+
+
+  In Body:
  	 <script src="default.js"></script>  in body**
 
 
@@ -13,10 +21,12 @@
 
 
 
-<-- also make sure adding this code to create a nav bar -->
+<-- also make sure adding these code to create a nav bar and place background video -->
 <-- do notice the class(btn active/btn), set btn active for a specific element according to your page -->
 <-- the sample code below is for nav bar of home page -->
 
+
+In Body:::
 <header>
             <nav>
 
@@ -30,7 +40,7 @@
 
               <ul id="navigation">
                 <li><a href="home_page.html" class="btn active">Home</a></li>
-                <li><a href="#about" class="btn">About</a></li>
+                <li><a href="MustGo.html" class="btn">MustGo</a></li>
                 <li><a href="#menu" class="btn">Menu</a></li>
                 <li><a href="application.html" class="btn">Apply</a></li>
                 <li><a href="contact.html" class="btn">Contact</a></li>
@@ -38,3 +48,15 @@
 
           </nav>
 </header>
+
+
+
+
+<main class="wrapper">
+        <div class="video-container">
+            <video autoplay muted loop id="bgv">
+                <source src="background_vid.mp4" type="video/mp4">
+            </video>
+            <div class="overlay"></div>
+        </div>
+</main>
