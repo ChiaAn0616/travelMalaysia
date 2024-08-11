@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         console.log('Customized Trip Application submitted:', formObject);
-        alert('Thank you for your application! We will contact you soon with further details.');
+        alert('Thank you for your application! We will pass your enquiries to our partnered agency and contact you soon with further details.');
         customTripForm.reset();
     });
 
