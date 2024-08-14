@@ -193,3 +193,14 @@ button[type="submit"]:hover {
 #customTripForm button[type="submit"]:hover {
     background-color: #8492e0;
 }
+.map-container {
+    margin-top: 30px;
+    height: 400px;
+    width: 80%; /* Change this value as needed */
+    max-width: 1000px; /* Optional: limit the maximum width */
+    margin-left: auto;
+    margin-right: auto; /* Center the map */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
