@@ -193,6 +193,7 @@ button[type="submit"]:hover {
 #customTripForm button[type="submit"]:hover {
     background-color: #8492e0;
 }
+
 .map-container {
     margin-top: 30px;
     height: 400px;
@@ -204,3 +205,17 @@ button[type="submit"]:hover {
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
+.footer {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    color: #8492e0;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
