@@ -38,6 +38,10 @@ nav ul {
     transition: .5s;
     list-style-type: none;
     margin: 0;
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    /* Add this to make the scrollbar more visually appealing */
+    scrollbar-width: thin; /* For Firefox */
+    -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
 nav ul li {
@@ -69,6 +73,23 @@ nav ul a {
 
 #check {
     display: none;
+}
+
+@media screen and (max-width: 1008px) { 
+    /* ... existing media query ... */
+    nav ul::-webkit-scrollbar { 
+        display: none; 
+    }
+
+    nav a.logo{
+        font-size: 150%;
+    }
+
+    nav ul {
+        -ms-overflow-style: none;  
+        scrollbar-width: none; 
+        max-width: calc(65% - 40px); 
+    }
 }
 
 
