@@ -77,6 +77,8 @@
     opacity: 0;
     transition: left 0.3s ease, opacity 0.3s ease;
 }
+
+
 @media screen and (max-width: 1350px) {
     .sec{
         width: 95%; 

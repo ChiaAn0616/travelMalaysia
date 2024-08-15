@@ -223,3 +223,38 @@ h1{
         flex-basis: calc(100% - 20px); /* One image per row */
     }
 }
+
+#tooltip {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    display: none; 
+    z-index: 10; 
+}
+
+#tooltip-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    cursor: pointer; /* Indicate it's interactive */
+}
+
+#tooltip-icon::before {
+    content: '\f0eb'; /* Unicode for lightbulb icon (Font Awesome) */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #fff;
+    font-size: 20px;
+}
