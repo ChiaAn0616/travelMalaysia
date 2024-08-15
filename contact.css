@@ -79,6 +79,7 @@ button:hover {
     margin: 10px 0;
 }
 
+
 .social-links {
     margin-top: 20px;
 }
@@ -86,13 +87,33 @@ button:hover {
 .social-links a {
     display: inline-block;
     margin-right: 10px;
-    color: #8492e0;
-    font-size: 24px;
+    color: #8492e0; /* Default color */
+    font-size: 24px; /* Adjust icon size */
     transition: color 0.3s ease;
+    text-decoration: none; /* Remove underline from links */
 }
 
 .social-links a:hover {
-    color: #333;
+    color: #333; /* Color on hover */
+}
+
+.social-links i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+
+.footer {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    color: #8492e0;
+}
+
+.footer p {
+    margin: 5px 0;
 }
 
 
