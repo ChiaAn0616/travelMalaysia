@@ -1,0 +1,403 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Banner Carousel */
+.banner-carousel {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.banner-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+.banner-slide.active {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+}
+
+/* Overlay */
+.banner-slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.banner-content {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+.banner-content h1 {
+    font-size: 48px; 
+    margin: 0;
+    margin-right: 60px;
+    margin-left: 20px;
+}
+
+.banner-content p {
+    font-size: 24px; 
+    margin: 10px 0 0;
+    margin-right: 60px;
+    margin-left: 20px;
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 16px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Container */
+.container {
+    display: flex;
+    width: 93%;
+    margin: 20px auto;
+    margin-left: 50px;
+    padding-top: 0;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 270px; /* Fixed width for the sidebar */
+    padding: 20px;
+    background-color: #ffffff; /* Bright and clean background color */
+    border-radius: 10px; /* Smooth rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for better depth */
+    margin-right: 20px; /* Space between sidebar and events grid */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+    position: sticky; /* Makes the sidebar stick as you scroll */
+    top: 120px; /* Distance from the top of the viewport when sticky */
+    max-height: calc(100vh - 40px); /* Ensure the sidebar does not exceed the viewport height */
+}
+
+.search-label {
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Search and Filter Bar */
+.search-filter-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between search and filter sections */
+}
+
+/* Search Bar */
+.search-bar {
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    width: 100%; /* Full width of the search-bar container */
+    max-width: 700px; /* Set a maximum width */
+    padding: 0 10px 0 35px; /* Adjust padding for icon and text */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 40px;
+    box-sizing: border-box;
+    background-color: #fff;
+    font-size: 16px;
+    background: url('Images/magnifyingGlass.png') no-repeat 10px center; /* Adjust the icon path and position */
+    background-size: 20px; /* Adjust the size of the icon */
+}
+
+.search-bar input[type="text"]::placeholder {
+    font-size: 16px;
+    color: #999; 
+}
+
+/* Filter Bar */
+.filter-label {
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.filter-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between filter elements */
+}
+
+.date-label {
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 2px;
+    color: #333;
+}
+
+.filter-bar select, .filter-bar input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.filter-bar select:focus, .filter-bar input[type="date"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Events Grid */
+.events-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+    align-items: stretch; /* Ensures that all cards are stretched to the same height */
+    gap: 20px;
+}
+
+/* Event Card */
+.event-card {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Pushes the button to the bottom */
+    position:relative;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.event-content {
+    padding: 15px;
+    flex-grow: 1;
+    min-height: 160px; /* Set a minimum height to equalize content sections */
+}
+
+.event-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.event-details {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #777;
+}
+
+.event-category {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #3498db;
+}
+
+/* See More Button Container */
+.see-more-container {
+    display: flex;
+    /*position: relative;*/
+    margin-left: 6px;
+    margin-top: auto;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 20px 20px 10px;
+}
+
+/* Event Price */
+.event-price {  
+    font-size: 19px;
+    font-weight: bold;
+    color: #e74c3c; 
+}
+
+/* See More Button */
+.see-more-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #dc3545;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    align-self: center;
+}
+
+.see-more-button:hover {
+    cursor:pointer;
+    background-color: #c82333;
+    text-decoration: underline;
+}
+
+#clearFiltersButton {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #dc3545; /* Red color to indicate reset/clear */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+#clearFiltersButton:hover {
+    cursor:pointer;
+    background-color: #c82333;
+}
+
+.events-grid-title {
+    font-size: 2em; /* Adjust the size to your preference */
+    font-weight: bold;
+    margin-bottom: 20px; /* Space below the title */
+    color: #333; /* Text color */
+    text-align: left; /* Align text to the left (or center, as needed) */
+    padding-left: 15px; /* Adjust padding if needed */
+    margin-top: 20px; /* Space above the title */
+}
+
+.events-section {
+    flex: 1; /* Take remaining space next to sidebar */
+    display: flex;
+    flex-direction: column;
+}
+
+#no-events-message {
+    display: none; /* Hidden by default */
+    text-align: center; /* Center the text horizontally */
+    font-size: 24px; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    color: white;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    padding: 100px 50px 50px 50px; /* Padding around the text */
+    background-color: rgba(255, 255, 255, 0.115);
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: 20px auto; /* Center the box horizontally */
+    width: 80%; /* Width of the message box */
+    height: 200px; /* Set a height for the box */
+    position: relative; /* Relative positioning for the pseudo-element */
+    display: flex; /* Use flexbox for vertical and horizontal centering */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-direction: column; /* Stack icon and text vertically */
+}
+
+/* Pseudo-element for background image */
+#no-events-message::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px; /* Rounded corners */
+    background-image: url('Images/noEventFound.jpeg'); /* Background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-size: cover; /* Cover the entire box with the image */
+    background-position: center; /* Center the background image */
+    filter: saturate(0.2) blur(3px) brightness(75%) contrast(85%); /* Lower the saturation of the image */
+    z-index: -1; /* Place the pseudo-element behind the content */
+}
+
+/* Basic styling for the select element */
+.currency-btn {
+    appearance: none; /* Removes default styling of the dropdown */
+    -webkit-appearance: none; /* Removes default styling in WebKit browsers */
+    -moz-appearance: none; /* Removes default styling in Firefox */
+    background-color: #fff; /* Background color */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding inside the dropdown */
+    font-size: 16px; /* Font size */
+    color: #333; /* Text color */
+    cursor: pointer; /* Change cursor on hover */
+    width: 150px; /* Width of the dropdown */
+}
+
+/* Adding a custom arrow icon */
+.currency-btn {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMUw2IDZMNyA1TDkgMyIgc3Ryb2tlPSIjQkJCQkJCIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgLz48L3N2Zz4=');
+    background-repeat: no-repeat;
+    background-position: right 15px center; /* Positioning the arrow */
+    background-size: 12px 12px; /* Size of the arrow */
+}
+
+/* Adjusting the width to accommodate longer currency codes */
+.currency-btn {
+    width: auto; /* Allows the button to adjust to the content */
+    min-width: 120px; /* Minimum width */
+    padding-right: 40px; /* Extra space for the arrow */
+}
+
+/* Hover and focus states */
+.currency-btn:hover,
+.currency-btn:focus {
+    border-color: #7c8ade; /* Darker border on hover/focus */
+    outline: none; /* Removes the default outline */
+}
+
