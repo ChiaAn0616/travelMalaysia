@@ -13,3 +13,26 @@ for (var i = 0; i < btns.length; i++) {
   this.className += " active";
   });
 }
+
+const navItems = document.querySelectorAll('#navigation li a');
+const tooltip = document.getElementById('tooltip');
+const tooltipIcon = document.getElementById('tooltip-icon');
+
+navItems.forEach(item => {
+    item.addEventListener('mouseover', () => {
+        tooltip.style.display = 'block';
+    });
+
+    item.addEventListener('mouseout', () => {
+        tooltip.style.display = 'none';
+    });
+});
+
+tooltipIcon.addEventListener('mouseover', () => {
+    tooltip.style.display = 'block';
+});
+
+tooltipIcon.addEventListener('mouseout', () => {
+    tooltip.style.display   
+ = 'none';
+});
