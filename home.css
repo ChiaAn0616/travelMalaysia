@@ -162,32 +162,6 @@ h1{
     right: 0; /* Slide into view from the right */
 }
 
-.more_links{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.more_links a{
-    font-size: 1.2em;
-    color: #007BFF;
-    text-decoration: none;
-    padding: 10px 20px;
-    border: 2px solid #007BFF;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.8);
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.more_links a:hover{
-    background-color: #007BFF;
-    color: white;
-    transform: scale(1.05);
-}
-
 .more_links a::before{
     content: "🔗"; /* Link icon before the text */
     position: absolute;
@@ -197,34 +171,13 @@ h1{
     transition: left 0.3s ease, opacity 0.3s ease;
 }
 
-.more_links a:hover::before {
-    left: 10px;
-    opacity: 1;
-}
-
-.more_links a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
-
-.more_links a:hover::after {
-    transform: scaleX(1);
-}
-
 .bottom{
-    margin-top: 80px ;
+    margin: 80px 30px;
     background-color: #8492e0;
     text-align: center;
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 5px;
 }
 
 .bottom h1{
