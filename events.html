@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+    
     <!--background_vid added-->
     <main class="wrapper">
         <div class="video-container">
@@ -34,14 +34,18 @@
             <i class="fas fa-bars"></i>
           </label>
 
-          <a href="#home" class="logo kanit-black-italic">Go-Malaysia</a>
+          <a href="#home" class="logo kanit-black-italic">Travel Malaysia</a>
 
           <ul id="navigation">
             <li><a href="home_page.html" class="btn">Home</a></li>
             <li><a href="MustGo.html" class="btn">MustGo</a></li>
-            <li><a href="attractions.html" class="btn">Destinations</a></li>
+            <li><a href="#menu" class="btn">Menu</a></li>
             <li><a href="application.html" class="btn">Apply</a></li>
             <li><a href="events.html" class="btn active">Events</a></li>
+            <li><a href="contact.html" class="btn">Contact</a></li>
+            <li><a href="wishlist.html" class="btn">Wishlist</a></li>
+
+            
             <!-- Currency Selector -->
             <li>
                 <select id="currency-selector" class="currency-btn">
@@ -67,7 +71,7 @@
                     <option value="VND">VND (₫)</option>
                 </select>
             </li>
-            <li><a href="contact.html" class="btn">Contact</a></li>
+            <button id="loginBtn"><a href="login.html" id="loginLink" onclick="saveCurrentPage()">Sign Up/Login</a></button>
           </ul>
       </nav>
     </header>
@@ -208,28 +212,31 @@
             <!-- Message for no events found -->
             <div id="no-events-message" style="display: none;">No events found!</div>
 
-            <div class="event-card" data-state="Perak" data-category="Sports" data-startdate="2024-08-18" data-enddate="2024-08-19" data-latitude="3.139007" data-longitude="101.686855" data-price="50">
+            <div class="event-card" data-id="event1" data-type="event" data-state="Perak" data-category="Sports" data-startdate="2024-08-18" data-enddate="2024-08-19" data-latitude="3.139007" data-longitude="101.686855" data-price="50">
                 <img src="Images/mualimCountryRun.jpeg" alt="mualimCountryRun" class="event-image">
                 <div class="event-content">
                     <div class="event-title">Mualim Cross Country Run</div>
                     <div class="event-category">Category: Sports</div>
                     <div class="event-details">Venue: Ujana Muallim, Tanjong Malim</div>
                     <div class="event-details">Date: 18 Aug 2024 - 19 Aug 2024</div>
+                    <button class="add-to-wishlist">Add to Wishlist ♡</button>
                     
                 </div>
                 <div class="see-more-container">
                 <div class="event-price">Price: $50</div>
                 <a href="https://www.muallimx.my" class="see-more-button">See More</a>
+                
                 </div>
             </div>
             
-            <div class="event-card" data-state="Kedah" data-category="Sports" data-startdate="2024-08-24" data-enddate="2024-08-24" data-latitude="3.139007" data-longitude="101.686855" data-price="75">
+            <div class="event-card" data-id="event2" data-type="event" data-state="Kedah" data-category="Sports" data-startdate="2024-08-24" data-enddate="2024-08-24" data-latitude="3.139007" data-longitude="101.686855" data-price="75">
                 <img src="Images/langkawiBikeChallenge.jpeg" alt="langkawiBikeChallenge" class="event-image">
                 <div class="event-content">
                     <div class="event-title">Langkawi International Folding Bike Challenge 2024</div>
                     <div class="event-category">Category: Sports</div>
                     <div class="event-details">Venue: Parking Zon B Mahsuri International Exhibition Centre, Langkawi</div>
                     <div class="event-details">Date: 24 Aug 2024</div>
+                    <button class="add-to-wishlist">Add to Wishlist ♡</button>
                     
                 </div>
                 <div class="see-more-container">
@@ -238,13 +245,14 @@
                 </div>
             </div>
 
-            <div class="event-card" data-state="Malaysia" data-category="Festival" data-startdate="2024-08-31" data-enddate="2024-08-31" data-latitude="3.139007" data-longitude="101.686855" data-price="0">
+            <div class="event-card" data-id="event3" data-type="event" data-state="Malaysia" data-category="Festival" data-startdate="2024-08-31" data-enddate="2024-08-31" data-latitude="3.139007" data-longitude="101.686855" data-price="0">
                 <img src="Images/nationalDay.jpeg" alt="nationalDay" class="event-image">
                 <div class="event-content">
                     <div class="event-title">National Day</div>
                     <div class="event-category">Category: Festival</div>
                     <div class="event-details">Venue: All Over Malaysia</div>
-                    <div class="event-details">Date: 31st August 2024</div>
+                    <div class="event-details">Date: 31 Aug 2024</div>
+                    <button class="add-to-wishlist">Add to Wishlist ♡</button>
                     
                 </div>
                 <div class="see-more-container">
@@ -253,13 +261,14 @@
                 </div>
             </div>
 
-            <div class="event-card" data-state="Malaysia" data-category="Sports" data-startdate="2024-08-28" data-enddate="2024-10-06" data-latitude="3.139007" data-longitude="101.686855" data-price="75">
+            <div class="event-card" data-id="event4" data-state="Malaysia" data-category="Sports" data-startdate="2024-08-28" data-enddate="2024-10-06" data-latitude="3.139007" data-longitude="101.686855" data-price="75">
                 <img src="Images/petronasRace.webp" alt="petronasRace" class="event-image">
                 <div class="event-content">
                     <div class="event-title">Petronas Le Tour De Langkawi 2024</div>
                     <div class="event-category">Category: Sports</div>
                     <div class="event-details">Venue: Langkawi, Arau - Butterworth, Taiping - Cameron Highlands, Kuala Kubu Bharu - Bentong, Kuala Lumpur - Melaka, Batu Pahat - Kulai, Miri - Bintulu</div>
                     <div class="event-details">Date: 29 Sep 2024 - 06 Oct 2024</div>
+                    <button class="add-to-wishlist">Add to Wishlist ♡</button>
                     
                 </div>
                 <div class="see-more-container">
@@ -268,13 +277,14 @@
                 </div>
             </div>
 
-            <div class="event-card" data-state="Selangor" data-category="Artsculture,Entertainment,Festival" data-startdate="2024-09-06" data-enddate="2024-09-08" data-latitude="3.139007" data-longitude="101.686855" data-price="75">
+            <div class="event-card" data-id="event5" data-state="Selangor" data-category="Artsculture,Entertainment,Festival" data-startdate="2024-09-06" data-enddate="2024-09-08" data-latitude="3.139007" data-longitude="101.686855" data-price="75">
                 <img src="Images/festivalSelangor.jpeg" alt="festivalSelangor" class="event-image">
                 <div class="event-content">
                     <div class="event-title">Festival Selangor @ Batu Laut</div>
                     <div class="event-category">Category: Arts & Culture, Entertainment, Festival</div>
                     <div class="event-details">Venue: Dataran Pantai Batu Laut, Tanjung Sepat Sepang, Selangor</div>
                     <div class="event-details">Date: 06 Sept 2024 - 08 Sept 2024</div>
+                    <button class="add-to-wishlist">Add to Wishlist ♡</button>
                     
                 </div>
                 <div class="see-more-container">
@@ -283,13 +293,14 @@
                 </div>
             </div>
 
-            <div class="event-card" data-state="Labuan" data-category="Artsculture" data-startdate="2024-09-27" data-enddate="2024-09-29" data-latitude="3.139007" data-longitude="101.686855" data-price="0">
+            <div class="event-card" data-id="event6" data-state="Labuan" data-category="Artsculture" data-startdate="2024-09-27" data-enddate="2024-09-29" data-latitude="3.139007" data-longitude="101.686855" data-price="0">
                 <img src="Images/borneoArtFestival.jpeg" alt="borneoArtFestival" class="event-image">
                 <div class="event-content">
                     <div class="event-title">Borneo Arts Festival 2024</div>
                     <div class="event-category">Category: Arts & Culture</div>
                     <div class="event-details">Venue: Ujana Kewangan Labuan</div>
                     <div class="event-details">Date: 27 Sept 2024 - 29 Sept 2024</div>
+                    <button class="add-to-wishlist">Add to Wishlist ♡</button>
                     
                 </div>
                 <div class="see-more-container">
@@ -298,13 +309,14 @@
                 </div>
             </div>
 
-            <div class="event-card" data-state="Kuala Lumpur" data-category="Artsculture" data-startdate="2024-10-03" data-enddate="2024-10-06" data-latitude="3.139007" data-longitude="101.686855" data-price="0">
+            <div class="event-card" data-id="event7" data-state="Kuala Lumpur" data-category="Artsculture" data-startdate="2024-10-03" data-enddate="2024-10-06" data-latitude="3.139007" data-longitude="101.686855" data-price="0">
                 <img src="Images/intac2024.png" alt="intac2024" class="event-image">
                 <div class="event-content">
                     <div class="event-title">International Tourism & Cultures Exhibition & Conference (INTAC 2024)</div>
                     <div class="event-category">Category: Arts & Culture</div>
                     <div class="event-details">Venue: World Trade Centre, Kuala Lumpur</div>
                     <div class="event-details">Date: 03 Sept 2024 - 06 Sept 2024</div>
+                    <button class="add-to-wishlist">Add to Wishlist ♡</button>
                     
                 </div>
                 <div class="see-more-container">
@@ -313,13 +325,14 @@
                 </div>
             </div>
 
-            <div class="event-card" data-state="Malacca" data-category="Artsculture, Entertainment, Festival" data-startdate="2024-10-25" data-enddate="2024-10-27" data-latitude="3.139007" data-longitude="101.686855" data-price="0">
+            <div class="event-card" data-id="event8" data-state="Malacca" data-category="Artsculture, Entertainment, Festival" data-startdate="2024-10-25" data-enddate="2024-10-27" data-latitude="3.139007" data-longitude="101.686855" data-price="0">
                 <img src="Images/FSSM.jpeg" alt="fssm" class="event-image">
                 <div class="event-content">
                     <div class="event-title">Festival Seni Selat Melaka</div>
                     <div class="event-category">Category: Arts & Culture, Entertainment, Festival</div>
                     <div class="event-details">Venue: Dataran Pahlawan Bandar Hilir, Melaka</div>
                     <div class="event-details">Date: 25 Oct 2024 - 27 Oct 2024</div>
+                    <button class="add-to-wishlist">Add to Wishlist ♡</button>
                     
                 </div>
                 <div class="see-more-container">
@@ -328,13 +341,14 @@
                 </div>
             </div>
 
-            <div class="event-card" data-state="Sabah" data-category="Music,Entertainment" data-startdate="2024-10-25" data-enddate="2024-10-27" data-latitude="3.139007" data-longitude="101.686855" data-price="0">
+            <div class="event-card" data-id="event9" data-state="Sabah" data-category="Music,Entertainment" data-startdate="2024-10-25" data-enddate="2024-10-27" data-latitude="3.139007" data-longitude="101.686855" data-price="0">
                 <img src="Images/rythmsOfKinabalu.png" alt="rythmsOfKinabalu" class="event-image">
                 <div class="event-content">
                     <div class="event-title">Rhythms of Kinabalu 2024</div>
                     <div class="event-category">Category: Music, Entertainment</div>
                     <div class="event-details">Venue: Padang Merdeka, Kota Kinabalu, Sabah</div>
                     <div class="event-details">Date: 25 Oct 2024 - 27 Oct 2024</div>
+                    <button class="add-to-wishlist">Add to Wishlist ♡</button>
                     
                 </div>
                 <div class="see-more-container">
@@ -346,10 +360,10 @@
         </div>
     </div>
 
-
-    <iframe src="footer.html" style="border: none; width: 100%; height: auto; overflow: hidden;" scrolling="no"></iframe>
     <script src="events.js"></script>
     <script src="default.js"></script>
+    <script src="login.js"></script>
+    <script src="wishlist.js"></script>
 
 </body>
 </html> 

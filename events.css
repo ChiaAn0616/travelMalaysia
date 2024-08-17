@@ -13,6 +13,32 @@ body {
     overflow: hidden;
 }
 
+@media (max-width: 768px) {
+    .banner-carousel {
+        height: 300px;
+        width: 100%; /* Ensure the banner takes up the full width */
+    }
+    
+    .banner-slide {
+        width: 100%; /* Ensure each slide takes up the full width */
+        background-size: cover; /* Ensure the background image covers the entire slide */
+        background-position: center; /* Center the background image */
+    }
+
+    .banner-slide.active{
+        width: 100%;
+        background-size: cover; /* Ensure the background image covers the entire slide */
+        background-position: center; /* Center the background image */
+    }
+
+    .banner-slide::before{
+        width: 100%;
+        background-size: cover; /* Ensure the background image covers the entire slide */
+        background-position: center; /* Center the background image */
+    }
+
+}
+
 .banner-slide {
     position: absolute;
     width: 100%;
@@ -20,19 +46,16 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 2s ease-in-out;
     opacity: 0;
 }
 
 .banner-slide.active {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    opacity: 1;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: opacity 1s ease-in-out;
-    opacity: 1;
+    
 }
 
 /* Overlay */
@@ -45,6 +68,9 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .banner-content {
@@ -56,18 +82,33 @@ body {
     z-index: 2;
 }
 
+@media (max-width: 768px) {
+    .banner-content {
+        bottom: 20px;
+        left: 20px;
+    }
+}
+
 .banner-content h1 {
     font-size: 48px; 
-    margin: 0;
-    margin-right: 60px;
-    margin-left: 20px;
+    margin: 0 60px 0 20px;
 }
 
 .banner-content p {
     font-size: 24px; 
-    margin: 10px 0 0;
-    margin-right: 60px;
-    margin-left: 20px;
+    margin: 10px 60px 10px 20px;
+}
+
+@media (max-width: 768px) {
+    .banner-content h1 {
+        font-size: 24px;
+        margin: 10px 30px 5px 30px
+    }
+    
+    .banner-content p {
+        font-size: 14px;
+        margin: 2px 40px, 20px 30px;
+    }
 }
 
 /* Navigation Buttons */
@@ -97,27 +138,51 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* Adjust button size on smaller screens */
+@media (max-width: 768px) {
+    .prev, .next {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
 /* Container */
 .container {
     display: flex;
     width: 93%;
     margin: 20px auto;
-    margin-left: 50px;
     padding-top: 0;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 95%;
+    }
 }
 
 /* Sidebar */
 .sidebar {
-    width: 270px; /* Fixed width for the sidebar */
+    width: 270px;
     padding: 20px;
-    background-color: #ffffff; /* Bright and clean background color */
-    border-radius: 10px; /* Smooth rounded corners */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for better depth */
-    margin-right: 20px; /* Space between sidebar and events grid */
-    overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
-    position: sticky; /* Makes the sidebar stick as you scroll */
-    top: 120px; /* Distance from the top of the viewport when sticky */
-    max-height: calc(100vh - 40px); /* Ensure the sidebar does not exceed the viewport height */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+    overflow-y: auto;
+    position: sticky;
+    top: 120px;
+    max-height: calc(100vh - 40px);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 90%;
+        position: static;
+        margin-right: 0;
+        margin-bottom: 20px;
+        max-height: none;
+    }
 }
 
 .search-label {
@@ -132,31 +197,22 @@ body {
 .search-filter-bar {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Space between search and filter sections */
+    gap: 20px;
 }
 
 /* Search Bar */
-.search-bar {
-    align-items: center;
-}
-
 .search-bar input[type="text"] {
-    width: 100%; /* Full width of the search-bar container */
-    max-width: 700px; /* Set a maximum width */
-    padding: 0 10px 0 35px; /* Adjust padding for icon and text */
+    width: 100%;
+    max-width: 700px;
+    padding: 0 10px 0 35px;
     border: 1px solid #ccc;
     border-radius: 5px;
     height: 40px;
     box-sizing: border-box;
     background-color: #fff;
     font-size: 16px;
-    background: url('Images/magnifyingGlass.png') no-repeat 10px center; /* Adjust the icon path and position */
-    background-size: 20px; /* Adjust the size of the icon */
-}
-
-.search-bar input[type="text"]::placeholder {
-    font-size: 16px;
-    color: #999; 
+    background: url('Images/magnifyingGlass.png') no-repeat 10px center;
+    background-size: 20px;
 }
 
 /* Filter Bar */
@@ -167,12 +223,6 @@ body {
     margin-top: 30px;
     margin-bottom: 5px;
     color: #333;
-}
-
-.filter-bar {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Space between filter elements */
 }
 
 .date-label {
@@ -202,17 +252,21 @@ body {
 .events-grid {
     flex: 1;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
-    align-items: stretch; /* Ensures that all cards are stretched to the same height */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Event Card */
 .event-card {
     display: flex;
-    flex-direction: column; /* Stack content vertically */
-    justify-content: space-between; /* Pushes the button to the bottom */
-    position:relative;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -233,7 +287,7 @@ body {
 .event-content {
     padding: 15px;
     flex-grow: 1;
-    min-height: 160px; /* Set a minimum height to equalize content sections */
+    min-height: 160px;
 }
 
 .event-title {
@@ -258,7 +312,6 @@ body {
 /* See More Button Container */
 .see-more-container {
     display: flex;
-    /*position: relative;*/
     margin-left: 6px;
     margin-top: auto;
     justify-content: space-between; 
@@ -286,18 +339,12 @@ body {
     align-self: center;
 }
 
-.see-more-button:hover {
-    cursor:pointer;
-    background-color: #c82333;
-    text-decoration: underline;
-}
-
 #clearFiltersButton {
     width: 100%;
     padding: 10px;
     font-size: 16px;
     font-weight: bold;
-    background-color: #dc3545; /* Red color to indicate reset/clear */
+    background-color: #dc3545;
     color: white;
     border: none;
     border-radius: 5px;
@@ -311,43 +358,58 @@ body {
 }
 
 .events-grid-title {
-    font-size: 2em; /* Adjust the size to your preference */
+    font-size: 2em;
     font-weight: bold;
-    margin-bottom: 20px; /* Space below the title */
-    color: #333; /* Text color */
-    text-align: left; /* Align text to the left (or center, as needed) */
-    padding-left: 15px; /* Adjust padding if needed */
-    margin-top: 20px; /* Space above the title */
+    margin-bottom: 20px;
+    color: #333;
+    text-align: left;
+    padding-left: 15px;
+    margin-top: 20px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+
+}
+
+@media (max-width: 768px) {
+    .events-grid-title {
+        font-size: 1.5em;
+        padding-left: 0;
+    }
 }
 
 .events-section {
-    flex: 1; /* Take remaining space next to sidebar */
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
 
 #no-events-message {
-    display: none; /* Hidden by default */
-    text-align: center; /* Center the text horizontally */
-    font-size: 24px; /* Larger font size */
-    font-weight: bold; /* Bold text */
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
     color: white;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
-    padding: 100px 50px 50px 50px; /* Padding around the text */
+    padding: 100px 50px 50px 50px;
     background-color: rgba(255, 255, 255, 0.115);
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-    margin: 20px auto; /* Center the box horizontally */
-    width: 80%; /* Width of the message box */
-    height: 200px; /* Set a height for the box */
-    position: relative; /* Relative positioning for the pseudo-element */
-    display: flex; /* Use flexbox for vertical and horizontal centering */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    flex-direction: column; /* Stack icon and text vertically */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 80%;
+    height: 200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-/* Pseudo-element for background image */
+@media (max-width: 768px) {
+    #no-events-message {
+        width: 90%;
+        padding: 50px 20px;
+        font-size: 20px;
+    }
+}
+
 #no-events-message::before {
     content: '';
     position: absolute;
@@ -355,49 +417,29 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 10px; /* Rounded corners */
-    background-image: url('Images/noEventFound.jpeg'); /* Background image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    background-size: cover; /* Cover the entire box with the image */
-    background-position: center; /* Center the background image */
-    filter: saturate(0.2) blur(3px) brightness(75%) contrast(85%); /* Lower the saturation of the image */
-    z-index: -1; /* Place the pseudo-element behind the content */
-}
-
-/* Basic styling for the select element */
-.currency-btn {
-    appearance: none; /* Removes default styling of the dropdown */
-    -webkit-appearance: none; /* Removes default styling in WebKit browsers */
-    -moz-appearance: none; /* Removes default styling in Firefox */
-    background-color: #fff; /* Background color */
-    border: 1px solid #ccc; /* Border color */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 20px; /* Padding inside the dropdown */
-    font-size: 16px; /* Font size */
-    color: #333; /* Text color */
-    cursor: pointer; /* Change cursor on hover */
-    width: 150px; /* Width of the dropdown */
-}
-
-/* Adding a custom arrow icon */
-.currency-btn {
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMUw2IDZMNyA1TDkgMyIgc3Ryb2tlPSIjQkJCQkJCIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgLz48L3N2Zz4=');
+    border-radius: 10px;
+    background-image: url('Images/noEventFound.jpeg');
     background-repeat: no-repeat;
-    background-position: right 15px center; /* Positioning the arrow */
-    background-size: 12px 12px; /* Size of the arrow */
+    background-size: cover;
+    background-position: center;
+    filter: saturate(0.2) blur(3px) brightness(75%) contrast(85%);
+    z-index: -1;
 }
 
-/* Adjusting the width to accommodate longer currency codes */
-.currency-btn {
-    width: auto; /* Allows the button to adjust to the content */
-    min-width: 120px; /* Minimum width */
-    padding-right: 40px; /* Extra space for the arrow */
+.add-to-wishlist {
+    padding: 7px;                              
+    font-size: 12px;                           /* Font size */
+    color: grey;                               /* Grey text color */
+    background-color: white;                   /* White background */
+    border: 1px solid grey;  
+    border-radius: 5px;                        /* Rounded corners */
+    text-decoration: none;                     /* No underline */
+    transition: background-color 0.3s;        
+    cursor: pointer;  
+    bottom: 10px;
+    left: 10px;  
 }
 
-/* Hover and focus states */
-.currency-btn:hover,
-.currency-btn:focus {
-    border-color: #7c8ade; /* Darker border on hover/focus */
-    outline: none; /* Removes the default outline */
+.add-to-wishlist:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: change background on hover */
 }
-

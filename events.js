@@ -49,7 +49,7 @@ function changePlaceholderText() {
     searchInput.placeholder = placeholderTexts[currentSearchIndex];
     currentSearchIndex = (currentSearchIndex + 1) % placeholderTexts.length; // Loop through the array
 }
-setInterval(changePlaceholderText, 2000);
+setInterval(changePlaceholderText, 2500);
 
 // Define a mapping of currency symbols
 const currencySymbols = {
@@ -312,3 +312,4 @@ document.addEventListener('DOMContentLoaded', () => {
     updatePriceFilterSymbols();
     document.getElementById('currency-selector').value = currency;
 });
+
