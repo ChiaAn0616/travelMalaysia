@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Malaysia - Plan Your Trip</title>
+    <link rel="stylesheet" href="default.css">
+    <link rel="stylesheet" href="plan_your_trip.css">
+</head>
+<body>
+    <!--background_vid added-->
+    <main class="wrapper">
+        <div class="video-container">
+            <video autoplay muted loop id="bgv">
+                <source src="background_vid.mp4" type="video/mp4">
+            </video>
+            <div class="overlay"></div>
+        </div>
+    </main>
+    <!--background_vid added-->
+
+    <!-- nav bar added -->
+    <header>
+        <nav>
+          <input type="checkbox" id="check">
+
+          <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+          </label>
+
+          <a href="#home" class="logo kanit-black-italic">Travel Malaysia</a>
+
+          <ul id="navigation">
+            <li><a href="home_page.html" class="btn">Home</a></li>
+            <li><a href="MustGo.html" class="btn">MustGo</a></li>
+            <li><a href="#menu" class="btn">Menu</a></li>
+            <li><a href="application.html" class="btn">Apply</a></li>
+            <li><a href="events.html" class="btn active">Events</a></li>
+            <li><a href="contact.html" class="btn">Contact</a></li>
+            
+            <!-- Currency Selector -->
+            <li>
+                <select id="currency-selector" class="currency-btn">
+                    <option value="MYR">MYR (RM)</option>
+                    <option value="AED">AED (AED)</option>
+                    <option value="AUD">AUD (AUD)</option>
+                    <option value="CAD">CAD (C$)</option>
+                    <option value="CNY">CNY (¥)</option>
+                    <option value="DKK">DKK (kr)</option>
+                    <option value="EGP">EGP (E£)</option>
+                    <option value="EUR">EUR (€)</option>
+                    <option value="FJD">FJD (FJ$)</option>
+                    <option value="GBP">GBP (£)</option>
+                    <option value="HKD">HKD (HK$)</option>
+                    <option value="IDR">IDR (Rp)</option>
+                    <option value="JPY">JPY (¥)</option>
+                    <option value="KRW">KRW (₩)</option>
+                    <option value="PHP">PHP (₱)</option>
+                    <option value="SGD">SGD (S$)</option>
+                    <option value="TWD">TWD (NT$)</option>
+                    <option value="THB">THB (฿)</option>
+                    <option value="USD">USD ($)</option>
+                    <option value="VND">VND (₫)</option>
+                </select>
+            </li>
+            <button id="loginBtn"><a href="login.html" id="loginLink" onclick="saveCurrentPage()">Sign Up/Login</a></button>
+          </ul>
+      </nav>
+    </header>
+    <!-- nav bar added-->
+
+    <main>
+        <section id="hero">
+            <h1>Plan Your Perfect Trip to Malaysia</h1>
+            <p>Explore, book, and manage your travel plans all in one place.</p>
+        </section>
+
+        <section id="inspiration" class="grid-container">
+            <div id="flight" class="grid-item">
+                <h3>Flight Search</h3>
+                <p>Find the best flights at unbeatable prices.</p>
+                <a href="flight.html">
+                <button>Search Flights</button></a>
+            </div>
+            <div id="accommodation" class="grid-item">
+                <h3>Accommodation Booking</h3>
+                <p>Discover your perfect stay.</p>
+                <a href="hotel.html">
+                <button>Search Hotels</button></a>
+            </div>
+            <div id="weather-info" class="grid-item">
+                <h3>Weather Information</h3>
+                <p>Get real-time weather updates.</p>
+                <a href="weather.html">
+                <button>Check Weather</button></a>
+            </div>
+            <div id="food-dining" class="grid-item">
+                <h3>Restaurant Search</h3>
+                <p>Find the best dining spots near you.</p>
+                <a href="cuisine.html">
+                <button>Find Restaurants</button></a>
+            </div>
+            
+        </section>
+    </main>
+
+    <iframe src="footer.html" style="border: none; width: 100%; height: auto; overflow: hidden;" scrolling="no"></iframe>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="plan_your_trip.js"></script>
+</body>
+</html>
