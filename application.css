@@ -197,8 +197,8 @@ button[type="submit"]:hover {
 .map-container {
     margin-top: 30px;
     height: 400px;
-    width: 80%; /* Change this value as needed */
-    max-width: 1000px; /* Optional: limit the maximum width */
+    width: 80%; 
+    max-width: 1000px; 
     margin-left: auto;
     margin-right: auto; /* Center the map */
     border-radius: 8px;
