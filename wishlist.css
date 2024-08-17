@@ -1,0 +1,177 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 100px; /* Add some margin to space it from the top */
+}
+
+.filter-section {
+    margin: 20px;
+    display: flex;
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: center; /* Center items horizontally */
+    padding: 25px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    gap:20px;
+}
+
+.filter-section label{
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+#searchBar, #typeFilter, #stateFilter, #sortFilter {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Full width on small screens */
+    max-width: 400px;
+}
+
+#searchBar {
+    flex: 1; /* Allows the search bar to take up more space */
+    max-width: 80%;
+    padding: 10px; 
+    border-radius: 5px;
+}
+
+/* See More Button */
+.see-more-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #dc3545;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    align-self: center;
+}
+
+.see-more-button:hover {
+    background-color: #c82333;
+}
+
+/* Wishlist Section */
+#wishlist-section {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 95%;
+    margin: 0px auto;
+}
+
+@media (max-width: 768px) {
+    .wishlist-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+.wishlist-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.wishlist-card:hover {
+    transform: translateY(-5px);
+}
+
+.wishlist-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.wishlist-content {
+    padding: 15px;
+    flex-grow: 1;
+    min-height: 160px;
+}
+
+.wishlist-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.wishlist-category {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #3498db;
+}
+
+.wishlist-details {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.wishlist-price {
+    font-size: 19px;
+    font-weight: bold;
+    color: #e74c3c; 
+}
+
+.wishlist-actions {
+    display: flex;
+    margin-left: 6px;
+    margin-top: auto;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 20px 20px 10px;
+}
+
+.see-more-button, .remove-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.remove-button {
+    background-color: #dc3545;
+}
+
+.remove-button:hover, .see-more-button:hover {
+    opacity: 0.8;
+}
+
+@media (min-width: 1000px) {
+    .filter-section {
+        flex-direction: row; /* Horizontal layout on larger screens */
+        flex-wrap: wrap; /* Allow wrapping to the next line if necessary */
+        justify-content: center; /* Center items horizontally */
+    }
+
+    #searchBar {
+        flex: 1; /* Takes up more space on larger screens */
+        max-width: 85%;
+    }
+
+    #typeFilter, #stateFilter, #sortFilter {
+        flex: 0 1 auto; /* Adjusts their size based on available space */
+        max-width: 200px;
+    }
+
+    .filter-section label {
+        display: inline; /* Inline labels on larger screens */
+        margin-right: 10px; /* Space between label and input/select */
+        margin-bottom: 10px;
+    }
+}

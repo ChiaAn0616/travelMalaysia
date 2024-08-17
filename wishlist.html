@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Wishlist</title>
+        <link rel="stylesheet" href="wishlist.css">
+        <link rel="stylesheet" href="default.css">
+    </head>
+
+<body>
+    <!--background_vid added-->
+    <main class="wrapper">
+        <div class="video-container">
+            <video autoplay muted loop id="bgv">
+                <source src="background_vid.mp4" type="video/mp4">
+            </video>
+            <div class="overlay"></div>
+        </div>
+    </main>
+    <!--background_vid added-->
+
+     <!-- nav bar added -->
+     <header>
+        <nav>
+          <input type="checkbox" id="check">
+
+          <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+          </label>
+
+          <a href="#home" class="logo kanit-black-italic">Travel Malaysia</a>
+
+          <ul id="navigation">
+            <li><a href="home_page.html" class="btn">Home</a></li>
+            <li><a href="MustGo.html" class="btn">MustGo</a></li>
+            <li><a href="#menu" class="btn">Menu</a></li>
+            <li><a href="application.html" class="btn">Apply</a></li>
+            <li><a href="events.html" class="btn active">Events</a></li>
+            <li><a href="contact.html" class="btn">Contact</a></li>
+            
+            <!-- Currency Selector -->
+            <li>
+                <select id="currency-selector" class="currency-btn">
+                    <option value="MYR">MYR (RM)</option>
+                    <option value="AED">AED (AED)</option>
+                    <option value="AUD">AUD (AUD)</option>
+                    <option value="CAD">CAD (C$)</option>
+                    <option value="CNY">CNY (¥)</option>
+                    <option value="DKK">DKK (kr)</option>
+                    <option value="EGP">EGP (E£)</option>
+                    <option value="EUR">EUR (€)</option>
+                    <option value="FJD">FJD (FJ$)</option>
+                    <option value="GBP">GBP (£)</option>
+                    <option value="HKD">HKD (HK$)</option>
+                    <option value="IDR">IDR (Rp)</option>
+                    <option value="JPY">JPY (¥)</option>
+                    <option value="KRW">KRW (₩)</option>
+                    <option value="PHP">PHP (₱)</option>
+                    <option value="SGD">SGD (S$)</option>
+                    <option value="TWD">TWD (NT$)</option>
+                    <option value="THB">THB (฿)</option>
+                    <option value="USD">USD ($)</option>
+                    <option value="VND">VND (₫)</option>
+                </select>
+            </li>
+            <button id="loginBtn"><a href="login.html" id="loginLink" onclick="saveCurrentPage()">Sign Up/Login</a></button>
+          </ul>
+      </nav>
+    </header>
+    <!-- nav bar added-->
+    <h1>My Wishlist ❤️</h1>
+    <div class="filter-section">
+        <label for="searchBar">Search:</label>
+        <input type="text" id="searchBar" placeholder="Enter keywords to find your items…">
+
+        <label>Filter:</label>
+
+        <select id="typeFilter">
+            <option value="">Filter by Type</option>
+            <option value="event">Event</option>
+            <option value="hotel">Hotel</option>
+            <option value="restaurant">Restaurant</option>
+        </select>
+
+        <select id="stateFilter">
+            <option value="">Filter by State</option>
+                    <option value="malaysia">All Over Malaysia</option>
+                    <option value="selangor">Selangor</option>
+                    <option value="kuala lumpur">Kuala Lumpur</option>
+                    <option value="pahang">Pahang</option>
+                    <option value="penang">Penang</option>
+                    <option value="johor">Johor</option>
+                    <option value="sabah">Sabah</option>
+                    <option value="perak">Perak</option>
+                    <option value="malacca">Malacca</option>
+                    <option value="perlis">Perlis</option>
+                    <option value="negeri sembilan">Negeri Sembilan</option>
+                    <option value="kelantan">Kelantan</option>
+                    <option value="terengganu">Terengganu</option>
+                    <option value="kedah">Kedah</option>
+                    <option value="sarawak">Sarawak</option>
+                    <option value="labuan">Labuan</option>
+        </select>
+
+        <label>Sort:</label>
+
+        <select id="sortFilter">
+            <option value="price-asc">Sort by Price (Low to High)</option>
+            <option value="price-desc">Sort by Price (High to Low)</option>
+            <option value="recent">Sort by Recently Added</option>
+        </select>
+
+        
+    </div>
+
+    <div id="wishlist-section">
+        <!-- Wishlist items will be inserted here by JavaScript -->
+    </div>
+    
+    <script src="wishlist.js"></script>
+    <script src="default.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
