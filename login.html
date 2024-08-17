@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up / Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="default.css">
+
+</head>
+<body>
+    <!--background_vid added-->
+    <main class="wrapper">
+        <div class="video-container">
+            <video autoplay muted loop id="bgv">
+                <source src="background_vid.mp4" type="video/mp4">
+            </video>
+            <div class="overlay"></div>
+        </div>
+    </main>
+    <!--background_vid added-->
+
+    <div class="form-container">
+        <h2 id="formTitle">Sign Up</h2>
+        <form id="authForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit" id="submitButton">Sign Up</button>
+        </form>
+        <p id="toggleMessage">Already have an account? <a href="#" id="toggleForm">Log In</a></p>
+    </div>
+
+    <script src="login.js"></script>
+    <script src="default.js"></script>
+</body>
+</html>

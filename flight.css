@@ -1,0 +1,161 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.search-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.search-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.search-form input {
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button#search-btn {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button#search-btn:hover {
+    background-color: #e65c00;
+}
+
+.results-container {
+    margin-top: 20px;
+}
+
+.flight-result {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.flight-result .flight-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.flight-result .flight-info div {
+    width: 100%;
+}
+
+.flight-result .price {
+    font-size: 24px;
+    color: #ff6600;
+    font-weight: bold;
+    text-align: right;
+}
+
+.banner {
+    background-image: url('Images/planeCover.webp'); /* Replace with the path to your plane image */
+    background-size: cover;
+    background-position: center;
+    height: 150px; /* Adjusted height for better mobile view */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; /* Text color for any content you add */
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner h1 {
+    font-size: 24px; /* Adjusted font size for better mobile view */
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .search-container {
+        padding: 15px;
+    }
+
+    .search-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-form input,
+    button#search-btn {
+        width: 100%;
+    }
+
+    .flight-result .flight-info {
+        flex-direction: column;
+    }
+
+    .banner {
+        height: 120px; /* Smaller height for mobile */
+        padding: 15px;
+    }
+
+    .banner h1 {
+        font-size: 20px; /* Smaller font size for mobile */
+    }
+}
+
+/* Extra Small Mobile Styles */
+@media (max-width: 480px) {
+    .search-form label {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+
+    .search-form input,
+    button#search-btn {
+        padding: 10px;
+        width: 80%;
+        align-self: center;
+    }
+
+    .flight-result .price {
+        font-size: 20px; /* Smaller font size for mobile */
+    }
+
+    .banner {
+        height: 100px; /* Further reduced height for very small screens */
+        padding: 10px;
+    }
+
+    .banner h1 {
+        font-size: 18px; /* Further reduced font size for very small screens */
+    }
+}
