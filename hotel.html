@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="hotel.css">
+    <link rel="stylesheet" type="text/css" href="default.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Hotels - Tourism Malaysia</title>
+</head>
+
+<body>
+    <button id="loginBtn"><a href="login.html" id="loginLink" onclick="saveCurrentPage()">Sign Up/Login</a></button>
+    <!--background_vid added-->
+    <main class="wrapper">
+        <div class="video-container">
+            <video autoplay muted loop id="bgv">
+                <source src="background_vid.mp4" type="video/mp4">
+            </video>
+            <div class="overlay"></div>
+        </div>
+    </main>
+    <!--background_vid added-->
+
+    <!-- nav bar added -->
+    <header>
+        <nav>
+          <input type="checkbox" id="check">
+
+          <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+          </label>
+
+          <a href="#home" class="logo kanit-black-italic">Travel Malaysia</a>
+
+          <ul id="navigation">
+            <li><a href="home_page.html" class="btn">Home</a></li>
+            <li><a href="MustGo.html" class="btn">MustGo</a></li>
+            <li><a href="#menu" class="btn">Menu</a></li>
+            <li><a href="application.html" class="btn">Apply</a></li>
+            <li><a href="events.html" class="btn active">Events</a></li>
+            <li><a href="contact.html" class="btn">Contact</a></li>
+            <!-- Currency Selector -->
+            <li>
+                <select id="currency-selector" class="currency-btn">
+                    <option value="MYR">MYR (RM)</option>
+                    <option value="AED">AED (AED)</option>
+                    <option value="AUD">AUD (AUD)</option>
+                    <option value="CAD">CAD (C$)</option>
+                    <option value="CNY">CNY (¥)</option>
+                    <option value="DKK">DKK (kr)</option>
+                    <option value="EGP">EGP (E£)</option>
+                    <option value="EUR">EUR (€)</option>
+                    <option value="FJD">FJD (FJ$)</option>
+                    <option value="GBP">GBP (£)</option>
+                    <option value="HKD">HKD (HK$)</option>
+                    <option value="IDR">IDR (Rp)</option>
+                    <option value="JPY">JPY (¥)</option>
+                    <option value="KRW">KRW (₩)</option>
+                    <option value="PHP">PHP (₱)</option>
+                    <option value="SGD">SGD (S$)</option>
+                    <option value="TWD">TWD (NT$)</option>
+                    <option value="THB">THB (฿)</option>
+                    <option value="USD">USD ($)</option>
+                    <option value="VND">VND (₫)</option>
+                </select>
+            </li>
+          </ul>
+      </nav>
+    </header>
+    <!-- nav bar added-->
+
+    <!-- Main Content -->
+    <div class="banner-carousel">
+        <div class="banner-slide" style="background-image: url('Images/hotelCover1.jpeg');">
+            <div class="banner-content">
+                <h1>Find Your Perfect Stay</h1>
+                <p>Explore the best hotels around Malaysia.</p>
+            </div>
+        </div>
+            <div class="banner-slide" style="background-image: url('Images/hotelCover2.jpeg');">
+                <div class="banner-content">
+                    <h1>Discover Your Ideal Hotel</h1>
+                    <p>Start your journey with the perfect stay.</p>
+                </div>
+            </div>
+            <div class="banner-slide" style="background-image: url('Images/hotelCover3.jpeg');">
+                <div class="banner-content">
+                    <h1>Uncover the Best Stays</h1>
+                    <p>Your perfect stay is just a search away.</p>
+                </div>
+            </div>
+
+        <!-- Navigation Buttons -->
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+    
+    <!-- Page Wrapper -->
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+       <!-- Search and Filter Bar -->
+            <div class="search-filter-bar">
+            <div class="search-bar">
+                <label for="search" class="search-label">Search</label>
+                <input type="text" id="search" placeholder="Search for hotels...">
+            </div>
+            <label class="filter-label">Filters</label>
+
+            <div class="filter-section">
+            <div class="filter-bar">
+                <select id="stateFilter">
+                    <option value="">Filter by State</option>
+                    <option value="malaysia">All over Malaysia</option>
+                    <option value="selangor">Selangor</option>
+                    <option value="kuala lumpur">Kuala Lumpur</option>
+                    <option value="pahang">Pahang</option>
+                    <option value="penang">Penang</option>
+                    <option value="johor">Johor</option>
+                    <option value="sabah">Sabah</option>
+                    <option value="perak">Perak</option>
+                    <option value="malacca">Malacca</option>
+                    <option value="perlis">Perlis</option>
+                    <option value="negeri sembilan">Negeri Sembilan</option>
+                    <option value="kelantan">Kelantan</option>
+                    <option value="terengganu">Terengganu</option>
+                    <option value="kedah">Kedah</option>
+                    <option value="sarawak">Sarawak</option>
+                    <option value="labuan">Labuan</option>
+                </select>
+
+                <select id="categoryFilter">
+                    <option value="">Filter by Property Type</option>
+                    <option value="Hotel">Hotels</option>
+                    <option value="Condos">Condos</option>
+                    <option value="Resorts">Resorts</option>
+                    <option value="Homestays">Homestays</option>
+                </select>
+
+                <select id="priceFilter">
+                    <option value="">Filter by Price per Night </option>
+                    <option value="1-50">Up to $50</option>
+                    <option value="51-100">$51 - $100</option>
+                    <option value="101-200">$101 - $200</option>
+                    <option value="201-500">$201 - $500</option>
+                    <option value="501-1000">$501 - $1000</option>
+                    <option value="1000-5000">$1000 - $5000</option>
+                    <option value="5000-10000">$5000 - $10000</option>
+                    <option value="10000-20000">$10000 - $20000</option>
+                    <option value="20000+">Above $20000</option>
+                </select>
+
+                <select id="starsFilter">
+                    <option value="">Filter by Star Rating</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <select id="facilitiesFilter">
+                    <option value="">Filter by Facilities</option>
+                    <option value="Swimming Pool">Swimming Pool</option>
+                    <option value="Gym">Gym</option>
+                </select>
+
+                <label for="dateFilter" class="date-label">Select Check-In and Check-Out Date:</label>
+                <input type="date" id="startDateFilter">                
+                <input type="date" id="endDateFilter">
+
+                <button id="clearFiltersButton">Clear All Filters</button>
+            </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="events-section">
+            <h2 class="events-grid-title">Accommodations</h2>
+            <p class="events-grid-title"><i>*price is calculated per night</i></p>
+
+        <!-- Events Grid -->
+        <div class="events-grid">
+            <!-- Message for no events found -->
+            <div id="no-events-message" style="display: none;">No events found!</div>
+
+            <div class="event-card"  data-state="kuala lumpur" data-id="hotel1" data-type="Hotel" data-category="Hotel" data-startdate="2000-01-01" data-enddate="2026-12-31" data-price="1000" data-stars="5" data-facilities="Gym, Swimming Pool">
+                <img src="Images/eq.jpg" alt="EQ" class="event-image">
+                <div class="event-content">
+                    <div class="event-title">EQ Kuala Lumpur</div>
+                    <div class="event-category">Hotels</div>
+                    <div class="event-details">5 stars</div>
+                    <div class="event-details">Gym, Swimming Pool</div>
+                    <button class="add-to-wishlist">Add to Wishlist 🩶</button>
+                </div>
+                <div class="see-more-container">
+                <div class="event-price">Price: $1000</div>
+                <a href="https://be.synxis.com/?Start=AvailResults&_ga=2.121264008.1655773336.1723887754-1173662486.1723887753&_gl=1*1fq00rb*_gcl_au*MTIyODY5MjMyMi4xNzIzODg3NzUz*_ga*MTE3MzY2MjQ4Ni4xNzIzODg3NzUz*_ga_1HB2YZFPCP*MTcyMzg4Nzc1My4xLjEuMTcyMzg4Nzc3Ny4zNi4wLjA.&adult=2&arrive=2024-08-17&chain=10237&child=0&currency=MYR&depart=2024-08-18&hotel=6257&level=hotel&locale=en-US&productcurrency=MYR&rooms=1" class="see-more-button">Book Now</a>
+                
+                </div>
+            </div>
+
+            <div class="event-card" data-state="sabah" data-id="hotel2" data-type="Hotel" data-category="Hotel" data-startdate="2000-01-01" data-enddate="2026-12-31" data-price="800" data-stars="4" data-facilities="Gym, Swimming Pool">
+                <img src="Images/pacific.jpg" alt="The Pacific Sutera Hotel" class="event-image">
+                <div class="event-content">
+                    <div class="event-title">The Pacific Sutera Hotel</div>
+                    <div class="event-category">Hotels</div>
+                    <div class="event-details">4 stars</div>
+                    <div class="event-details">Gym, Swimming Pool</div>
+                    <button class="add-to-wishlist">Add to Wishlist 🩶</button>
+                </div>
+                <div class="see-more-container">
+                <div class="event-price">Price: $800</div>
+                <a href="https://book-directonline.com/properties/thepacificsuterahoteldirect?locale=en&items[0][adults]=2&items[0][children]=0&items[0][infants]=0&currency=MYR&checkInDate=2024-08-17&checkOutDate=2024-08-18&trackPage=no" class="see-more-button">Book Now</a>
+                
+                </div>
+            </div>
+
+            <div class="event-card" data-state="penang" data-id="hotel3" data-type="Hotel" data-category="Hotel" data-startdate="2000-01-01" data-enddate="2026-12-31" data-price="450" data-stars="4" data-facilities="Gym, Swimming Pool">
+                <img src="Images/hrpenang.jpg" alt="Hard Rock Hotel Penang" class="event-image">
+                <div class="event-content">
+                    <div class="event-title">Hard Rock Hotel Penang</div>
+                    <div class="event-category">Hotels</div>
+                    <div class="event-details">4 stars</div>
+                    <div class="event-details">Gym, Swimming Pool</div>
+                    <button class="add-to-wishlist">Add to Wishlist 🩶</button>
+                </div>
+                <div class="see-more-container">
+                <div class="event-price">Price: $450</div>
+                <a href="https://www.book-secure.com/index.php?s=results&property=mypen17929&arrival=2024-08-17&departure=2024-08-18&adults1=1&children1=0&locale=en_GB&currency=MYR&stid=3ezbffi48&adobe_mc=MCMID=14993175481187459103884533876978066337|MCORGID=1C1238B352785AA60A490D4C%40AdobeOrg|TS=1723888690&_gl=1*17gc3jm*_gcl_aw*R0NMLjE3MjM4ODg2ODUuQ2owS0NRandsSUcyQmhDNEFSSXNBREJncFZTcG1oTnRDbUQ3bmtxbmotZWRaZ2d6T0RySDItOXp0TE1kX3ExNFYxMHBqU04wUjliLVdPOGFBdkpORUFMd193Y0I.*_gcl_dc*R0NMLjE3MjM4ODg2ODUuQ2owS0NRandsSUcyQmhDNEFSSXNBREJncFZTcG1oTnRDbUQ3bmtxbmotZWRaZ2d6T0RySDItOXp0TE1kX3ExNFYxMHBqU04wUjliLVdPOGFBdkpORUFMd193Y0I.*_gcl_au*NjQwNzAzMjk4LjE3MjM4ODg2NzY.*_ga*MTg1MjY2MDg4Mi4xNzIzODg4Njc3*_ga_RLK2YFGZYQ*MTcyMzg4ODY3Ni4xLjAuMTcyMzg4ODY3Ni4wLjAuMA..&_ga=2.49709537.694096159.1723888677-1852660882.1723888677&_gac=1.153613770.1723888677.Cj0KCQjwlIG2BhC4ARIsADBgpVSpmhNtCmD7nkqnj-edZggzODrH2-9ztLMd_q14V10pjSN0R9b-WO8aAvJNEALw_wcB" class="see-more-button">Book Now</a>
+                
+                </div>
+            </div>
+
+            <div class="event-card" data-state="perak" data-id="hotel4" data-type="Hotel" data-category="Resorts" data-startdate="2000-01-01" data-enddate="2026-12-31" data-price="500" data-stars="3" data-facilities="Swimming Pool">
+                <img src="Images/pangkor.jpg" alt="Pangkor Laut Resort" class="event-image">
+                <div class="event-content">
+                    <div class="event-title">Pangkor Laut Resort</div>
+                    <div class="event-category">Resorts</div>
+                    <div class="event-details">3 stars</div>
+                    <div class="event-details">Swimming Pool</div>
+                    <button class="add-to-wishlist">Add to Wishlist 🩶</button>
+                </div>
+                <div class="see-more-container">
+                <div class="event-price">Price: $500</div>
+                <a href="https://reservations.pangkorlautresort.com/book/accommodations?adults=1&arrivalDate=undefined/17/08/2024/undefined&children=0&datein=8/17/2024&domain=www.pangkorlautresort.com&HotelID=72663&languageid=11&nights=1" class="see-more-button">Book Now</a>
+                
+                </div>
+            </div>
+
+            <div class="event-card" data-state="kuala lumpur" data-id="hotel5" data-type="Hotel" data-category="Condos" data-startdate="2000-01-01" data-enddate="2026-12-31" data-price="350" data-stars="4" data-facilities="Swimming Pool">
+                <img src="Images/sabasuites.jpg" alt="Saba Suites at Platinum KLCC" class="event-image">
+                <div class="event-content">
+                    <div class="event-title">Saba Suites at Platinum KLCC</div>
+                    <div class="event-category">Condos</div>
+                    <div class="event-details">4 stars</div>
+                    <div class="event-details">Swimming Pool</div>
+                    <button class="add-to-wishlist">Add to Wishlist 🩶</button>
+                </div>
+                <div class="see-more-container">
+                <div class="event-price">Price: $350</div>
+                <a href="https://www.sabasuites.com/book-now" class="see-more-button">Book Now</a>
+                
+                </div>
+            </div>
+
+            <div class="event-card" data-state="perak" data-id="hotel5" data-type="Hotel" data-category="Homestays" data-startdate="2000-01-01" data-enddate="2026-12-31" data-price="611" data-stars="3" data-facilities="Swimming Pool">
+                <img src="Images/jiran.jpg" alt="Jiran 58 Guesthouse " class="event-image">
+                <div class="event-content">
+                    <div class="event-title">Jiran 58 Guesthouse </div>
+                    <div class="event-category">Homestays</div>
+                    <div class="event-details">3 stars</div>
+                    <div class="event-details">Swimming Pool</div>
+                    <button class="add-to-wishlist">Add to Wishlist 🩶</button>
+                </div>
+                <div class="see-more-container">
+                <div class="event-price">Price: $611</div>
+                <a href="https://www.airbnb.com.my/rooms/30169812?adults=1&enable_m3_private_room=true&search_mode=regular_search&check_in=2024-09-01&check_out=2024-09-02&source_impression_id=p3_1723890687_P3tAMe6z_qJiHaf0&previous_page_section_name=1000&federated_search_id=4da96759-a868-486d-b8ac-21b3e2d7c403&guests=1" class="see-more-button">Book Now</a>
+                
+                </div>
+            </div>
+        
+            </div>
+        </div>
+    </div>
+
+    <script src="hotel.js"></script>
+    <script src="default.js"></script>
+    <script src="login.js"></script>
+    <script src="wishlist.js"></script>
+
+</body>
+</html> 
