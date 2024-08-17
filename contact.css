@@ -17,7 +17,6 @@ body {
     margin-top: 70px;
 }
 
-
 h1 {
     margin: 0;
     font-size: 2.5em;
@@ -79,7 +78,6 @@ button:hover {
     margin: 10px 0;
 }
 
-
 .social-links {
     margin-top: 20px;
 }
@@ -101,6 +99,51 @@ button:hover {
     margin-right: 8px; /* Space between icon and text */
 }
 
+/* Media Queries for Mobile Responsiveness */
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin-top: 50px;
+    }
 
+    .contact-form, .contact-info {
+        padding: 20px;
+        margin-top: 20px;
+    }
 
+    button {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    }
+}
 
+@media only screen and (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .container {
+        padding: 10px;
+        margin-top: 40px;
+    }
+
+    .contact-form, .contact-info {
+        padding: 15px;
+        margin-top: 15px;
+    }
+
+    .form-group input, .form-group textarea {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .social-links a {
+        font-size: 20px; /* Slightly smaller icons on small screens */
+    }
+}
