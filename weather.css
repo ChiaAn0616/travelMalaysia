@@ -1,0 +1,212 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+
+}
+
+.banner {
+    height: 180px; /* Adjusted height for better mobile view */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner h1 {
+    font-size: 2.5rem; /* Adjusted font size for better view on different screens */
+    margin: 0;
+    font-weight: bold;
+}
+
+.container {
+    margin: 50px; /* Reduced margin for better spacing */
+    padding: 30px 20px; /* Adjusted padding for better content fitting */
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    align-self: center;
+    align-items: center;
+}
+
+.container h1 {
+    font-size: 2.2rem; /* Slightly smaller font size for better balance */
+    margin-bottom: 20px;
+    color: #ff690f;
+    font-weight: bold;
+}
+
+.input-group {
+    margin-bottom: 20px; /* Reduced margin for better spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: 1.2rem; /* Adjusted font size for better readability */
+    color: #555;
+    margin-bottom: 8px;
+}
+
+input[type="text"] {
+    padding: 12px; /* Reduced padding for a more compact look */
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 350px; /* Adjusted max-width for better mobile view */
+    margin-bottom: 12px; /* Reduced margin for better spacing */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+button {
+    padding: 12px 25px; /* Adjusted padding for better balance */
+    border: none;
+    background-color: #ff690f;
+    color: white;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #e55d0e;
+    transform: scale(1.03); /* Slight zoom effect on hover */
+}
+
+.current-weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.weather-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Adjusted gap for better spacing */
+    text-align: center;
+}
+
+.weather-icon {
+    width: 200px; /* Adjusted width for better view */
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.details {
+    font-size: 1.2rem; /* Adjusted font size for readability */
+    line-height: 1.5;
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#city-name {
+    font-size: 2.5rem; /* Slightly reduced font size for better balance */
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#temperature {
+    font-size: 4rem; /* Adjusted font size for a balanced look */
+    font-weight: bold;
+    margin: 0;
+    color: #ff690f;
+}
+
+#weather-description {
+    font-size: 1.4rem; /* Adjusted font size for better readability */
+    font-weight: 400;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #666;
+}
+
+.details p {
+    margin: 4px 0; /* Adjusted margin for better spacing */
+    font-size: 1rem;
+    color: #666;
+    text-align: center;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px 15px;
+        align-self: center;
+        align-items: center;
+        margin: 0px;
+    }
+
+    .container h1 {
+        font-size: 1.8rem;
+    }
+
+    #temperature {
+        font-size: 3.2rem; /* Adjusted font size for mobile view */
+    }
+
+    .details {
+        font-size: 1rem; /* Adjusted font size for mobile view */
+    }
+}
+
+@media (max-width: 1000px) {
+    .container {
+        padding: 20px 10px;
+        align-self: center;
+        align-items: center;
+        margin: 0px;
+    }
+
+    .container h1 {
+        font-size: 1.6rem;
+    }
+
+    input[type="text"] {
+        max-width: 90%;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    #temperature {
+        font-size: 2.8rem; /* Adjusted font size for small screens */
+    }
+
+    .details p {
+        font-size: 0.9rem;
+    }
+}
