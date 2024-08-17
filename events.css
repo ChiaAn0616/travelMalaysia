@@ -323,7 +323,7 @@ body {
 .event-price {  
     font-size: 19px;
     font-weight: bold;
-    color: #e74c3c; 
+    color: #626ca5; 
 }
 
 /* See More Button */
@@ -332,11 +332,16 @@ body {
     font-size: 16px;
     font-weight: bold;
     color: white;
-    background-color: #dc3545;
+    background-color: #626ca5;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
     align-self: center;
+}
+
+.see-more-button:hover{
+    background-color: #e74ab8;
+    transform: scale(1.03); /* Slight zoom effect on hover */
 }
 
 #clearFiltersButton {
@@ -344,17 +349,18 @@ body {
     padding: 10px;
     font-size: 16px;
     font-weight: bold;
-    background-color: #dc3545;
+    background-color: #626ca5;
     color: white;
     border: none;
     border-radius: 5px;
     margin-top: 10px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 #clearFiltersButton:hover {
     cursor:pointer;
-    background-color: #c82333;
+    background-color: #e74ab8;
+    transform: scale(1.03); /* Slight zoom effect on hover */
 }
 
 .events-grid-title {
@@ -443,3 +449,4 @@ body {
 .add-to-wishlist:hover {
     background-color: rgba(255, 255, 255, 0.8); /* Optional: change background on hover */
 }
+

@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Attractions and Destinations</title>
+        <title>Attractions and Destinations - GoMalaysia</title>
         <link rel="stylesheet" type="text/css" href="default.css">
         <link rel="stylesheet" type="text/css" href="attractions.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,23 +17,24 @@
         <header>
             <nav>
               <input type="checkbox" id="check">
-
               <label for="check" class="checkbtn">
                 <i class="fas fa-bars"></i>
               </label>
-
               <a href="#home" class="logo kanit-black-italic">GO-MALAYSIA</a>
-
               <ul id="navigation">
                 <li><a href="home_page.html" class="btn">Home</a></li>
                 <li><a href="MustGo.html" class="btn">MustGo</a></li>
                 <li><a href="attractions.html" class="btn active">Destinations</a></li>
                 <li><a href="application.html" class="btn">Apply</a></li>
                 <li><a href="events.html" class="btn">Events</a></li>
+                <li><a href="plan_your_trip.html" class="btn">Plan</a></li>
+                <li><a href="culture.html" class="btn">Blogs</a></li>
                 <li><a href="contact.html" class="btn">Contact</a></li>
+                <li><a href="wishlist.html" class="btn">Wishlist</a></li>
+                <li><a href="login.html" class="btn" id="loginLink" onclick="saveCurrentPage()">Login</a></li>
+                <!--<li><button id="loginBtn"><a href="login.html" id="loginLink" onclick="saveCurrentPage()">Sign Up/Login</a></button></li>-->
               </ul>
-
-            </nav>
+          </nav>
         </header>
 
         <main class="wrapper">
@@ -232,7 +233,24 @@
         <div id="tooltip-icon"></div>
 
 
-        <iframe src="footer.html" style="border: none; width: 100%; height: auto; overflow: hidden;" scrolling="no"></iframe>
+        <div class="footerContainer">
+            <footer class="footer">
+                <p>&copy; 2024 Travel Malaysia. All Rights Reserved.</p>
+                <p>Designed by Chin Zi Wei, Chia An, Lean Jin Hao, Tang Jia Hui</p>
+                <p>
+                    <a href="https://www.instagram.com/malaysia.truly.asia?igsh=MTF3NGxoZWh4bml4Nw==" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/malaysia.travel.my?mibextid=ZbWKwL" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </p>
+                <p>
+                  <button class="share-btn" onclick="shareWebsite()">Share This Website</button>
+              </p>
+            </footer>
+        </div>
+        <script src="login.js"></script>
         <script src="default.js"></script>
         <script src="attractions.js"></script>
     </body>
