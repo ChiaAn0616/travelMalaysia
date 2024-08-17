@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="cuisine.css">
+    <link rel="stylesheet" type="text/css" href="default.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Food and Dining - Tourism Malaysia</title>
+</head>
+
+<body>
+
+    <!--background_vid added-->
+    <main class="wrapper">
+        <div class="video-container">
+            <video autoplay muted loop id="bgv">
+                <source src="background_vid.mp4" type="video/mp4">
+            </video>
+            <div class="overlay"></div>
+        </div>
+    </main>
+    <!--background_vid added-->
+
+    <!-- nav bar added -->
+    <header>
+        <nav>
+          <input type="checkbox" id="check">
+
+          <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+          </label>
+
+          <a href="#home" class="logo kanit-black-italic">Travel Malaysia</a>
+
+          <ul id="navigation">
+            <li><a href="home_page.html" class="btn">Home</a></li>
+            <li><a href="MustGo.html" class="btn">MustGo</a></li>
+            <li><a href="#menu" class="btn">Menu</a></li>
+            <li><a href="application.html" class="btn">Apply</a></li>
+            <li><a href="events.html" class="btn active">Events</a></li>
+            <li><a href="contact.html" class="btn">Contact</a></li>
+            <!-- Currency Selector -->
+            <li>
+                <select id="currency-selector" class="currency-btn">
+                    <option value="MYR">MYR (RM)</option>
+                    <option value="AED">AED (AED)</option>
+                    <option value="AUD">AUD (AUD)</option>
+                    <option value="CAD">CAD (C$)</option>
+                    <option value="CNY">CNY (¥)</option>
+                    <option value="DKK">DKK (kr)</option>
+                    <option value="EGP">EGP (E£)</option>
+                    <option value="EUR">EUR (€)</option>
+                    <option value="FJD">FJD (FJ$)</option>
+                    <option value="GBP">GBP (£)</option>
+                    <option value="HKD">HKD (HK$)</option>
+                    <option value="IDR">IDR (Rp)</option>
+                    <option value="JPY">JPY (¥)</option>
+                    <option value="KRW">KRW (₩)</option>
+                    <option value="PHP">PHP (₱)</option>
+                    <option value="SGD">SGD (S$)</option>
+                    <option value="TWD">TWD (NT$)</option>
+                    <option value="THB">THB (฿)</option>
+                    <option value="USD">USD ($)</option>
+                    <option value="VND">VND (₫)</option>
+                </select>
+            </li>
+            <li><button id="loginBtn"><a href="login.html" id="loginLink" onclick="saveCurrentPage()">Sign Up/Login</a></button></li>
+          </ul>
+      </nav>
+    </header>
+    <!-- nav bar added-->
+
+    <!-- Main Content -->
+    <div class="banner-carousel">
+        <div class="banner-slide" style="background-image: url('Images/tiffin.jpg');">
+            <div class="banner-content">
+                <h1>Tiffin</h1>
+                <p>Take time for yourself and join us for the love of food. With chefs</p>
+                <p>flown in to guide the direction of dining at WEIL, we offer you the</p>
+                <p>best experience the city of Ipoh can offer. Enjoy :)</p>
+            </div>
+        </div>
+            <div class="banner-slide" style="background-image: url('Images/tandoor.jpg');">
+                <div class="banner-content">
+                    <h1>Tandoor Grill</h1>
+                    <p>'Classic With A Modern Twist' . An Exclusive Restaurant</p>
+                    <p>'which specializes in Authentic Northern Indian Cuisine</p>
+                </div>
+            </div>
+            <div class="banner-slide" style="background-image: url('Images/hardrock.jpg');">
+                <div class="banner-content">
+                    <h1>Hard Rock Cafe Melaka</h1>
+                    <p>Real American Flavors in the Heart of Melaka, Malaysia</p>
+                </div>
+            </div>
+
+            <div class="banner-slide" style="background-image: url('Images/heitage.jpg');">
+                <div class="banner-content">
+                    <h1>Heritage Artisans</h1>
+                    <p>Our goal is to share heritage cuisines and street food culture with travellers.</p>
+                    <p>Food is for gifting.</p>
+                </div>
+            </div>
+
+
+        <!-- Navigation Buttons -->
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+    
+    <!-- Page Wrapper -->
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+       <!-- Search and Filter Bar -->
+            <div class="search-filter-bar">
+            <div class="search-bar">
+                <label for="search" class="search-label">Search</label>
+                <input type="text" id="search" placeholder="Search for events...">
+            </div>
+            <label class="filter-label">Filtering events</label>
+
+            <div class="filter-section">
+            <div class="filter-bar">
+                <select id="stateFilter">
+                    <option value="">Filter by State</option>
+                    <option value="malaysia">All over Malaysia</option>
+                    <option value="selangor">Selangor</option>
+                    <option value="kuala lumpur">Kuala Lumpur</option>
+                    <option value="pahang">Pahang</option>
+                    <option value="penang">Penang</option>
+                    <option value="johor">Johor</option>
+                    <option value="sabah">Sabah</option>
+                    <option value="perak">Perak</option>
+                    <option value="malacca">Malacca</option>
+                    <option value="perlis">Perlis</option>
+                    <option value="negeri sembilan">Negeri Sembilan</option>
+                    <option value="kelantan">Kelantan</option>
+                    <option value="terengganu">Terengganu</option>
+                    <option value="kedah">Kedah</option>
+                    <option value="sarawak">Sarawak</option>
+                    <option value="labuan">Labuan</option>
+                </select>
+
+                <select id="categoryFilter">
+                    <option value="">Filter by Category</option>
+                    <option value="Asian">Asian</option>
+                    <option value="Western">Western</option>
+                    <option value="Malay">Malay</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <select id="priceFilter">
+                    <option value="">Filter by Price</option>
+                    <option value="0">Free of Charge</option>
+                    <option value="1-50">Up to $50</option>
+                    <option value="51-100">$51 - $100</option>
+                    <option value="101-200">$101 - $200</option>
+                    <option value="201-500">$201 - $500</option>
+                    <option value="501-1000">$501 - $1000</option>
+                    <option value="1000-5000">$1000 - $5000</option>
+                    <option value="5000-10000">$5000 - $10000</option>
+                    <option value="10000-20000">$10000 - $20000</option>
+                    <option value="20000+">Above $20000</option>
+                </select>
+
+
+                <button id="clearFiltersButton">Clear All Filters</button>
+            </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="events-section">
+            <h2 class="events-grid-title">Popular Cuisines</h2>
+
+        <!-- Events Grid -->
+        <div class="events-grid">
+            <!-- Message for no events found -->
+            <div id="no-events-message" style="display: none;">No events found!</div>
+
+            <div class="event-card" data-id="restaurant1" data-type="Restaurant" data-state="Kuala Lumpur" data-category="Malay" data-price="12">
+                <img src="Images/villagepark.jpg" alt="villagepark" class="event-image">
+                <div class="event-content">
+                    <div class="event-title">Village Park Restaurant</div>
+                    <div class="event-category">Category: Malay</div>
+                    <div class="event-details">Address: Village Park Restaurant, 5, Jalan SS 21/37, Damansara Utama, 47400 Petaling Jaya, Selangor</div>
+                    <div class="event-details">Operation Hour: 7:30am - 5:30pm</div>
+                    <button class="add-to-wishlist">Add to Wishlist ♡</button>
+                    
+                </div>
+                <div class="see-more-container">
+                <div class="event-price">Price: $12</div>
+                <a href="https://www.google.com/maps/dir//Village+Park+Restaurant,+5,+Jalan+SS+21%2F37,+Damansara+Utama,+47400+Petaling+Jaya,+Selangor/@3.1376947,101.6207512,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31cc4931330bf621:0x21aac39e1d6f6f3c!2m2!1d101.6233261!2d3.1376947?entry=ttu" class="see-more-button">Direction</a>
+                </div>
+            </div>
+            
+            <div class="event-card" data-id="restaurant2" data-type="Restaurant"data-state="Kuala Lumpur" data-category="Chinese" data-price="80">
+                <img src="Images/sichuan.jpg" alt="sichuan" class="event-image">
+                <div class="event-content">
+                    <div class="event-title">Sichuan Kitchen</div>
+                    <div class="event-category">Category: Chinese</div>
+                    <div class="event-details">Address: Sichuan Kitchen, Four Points By Sheraton Kuala Lumpur, City Centre, Corner of Jalan Sultan Ismail, &, Jln Ampang, Kuala Lumpur, 50450 WP</div>
+                    <div class="event-details">Operation Hour: 12–2:30pm, 6–10:00pm</div>
+                    <button class="add-to-wishlist">Add to Wishlist ♡</button>
+                    
+                </div>
+                <div class="see-more-container">
+                <div class="event-price">Price: $80</div>
+                <a href="https://www.google.com/maps?sca_esv=31ffe10ca818684f&sca_upv=1&gs_lp=Egxnd3Mtd2l6LXNlcnAiC3NpY2h1YW4ga2l0KgIIATILEAAYgAQYkQIYigUyCxAuGIAEGMcBGK8BMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgARI6DBQoAFYuSdwAHgCkAEAmAFpoAHnAqoBAzMuMbgBAcgBAPgBAZgCBqACySHCAgQQABhHwgIKEAAYgAQYQxiKBcICChAuGIAEGEMYigXCAgwQLhiABBhDGIoFGArCAgUQLhiABMICFhAuGIAEGLEDGNEDGEMYgwEYxwEYigXCAhkQLhiABBhDGIoFGJcFGNwEGN4EGN8E2AEBwgIUEC4YgAQYkQIYxwEYigUYjgUYrwGYAwCIBgGQBgi6BgYIARABGBSSBwcyLjMuOS0xoAfQPg&um=1&ie=UTF-8&fb=1&gl=my&sa=X&geocode=KTnB15N0ScwxMZc-FIyGFMph&daddr=Corner+of+Jalan+Sultan+Ismail,+%26,+Jln+Ampang,+Kuala+Lumpur,+50450+WP" class="see-more-button">Direction</a>
+                </div>
+            </div>
+
+            <div class="event-card" data-id="restaurant3" data-type="Restaurant"data-state="penang" data-category="Chinese" data-price="200">
+                <img src="Images/heitage.jpg" alt="Heritage Artisans" class="event-image">
+                <div class="event-content">
+                    <div class="event-title">Heritage Artisans</div>
+                    <div class="event-category">Category: Chinese</div>
+                    <div class="event-details">Address: Nyonya Su Pei Private Dining / Heritage Artisans, 53, Jalan Padang Victoria, 10400 George Town, Penang</div>
+                    <div class="event-details">Operation Hour: 6:00pm - 12:00am</div>
+                    <button class="add-to-wishlist">Add to Wishlist ♡</button>
+                    
+                </div>
+                <div class="see-more-container">
+                <div class="event-price">Price: $200</div>
+                <a href="https://www.google.com/maps/dir//53,+Jalan+Padang+Victoria,+10400+George+Town,+Pulau+Pinang/@5.4217216,100.2387551,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x304ac3bbcb346a31:0xce94f0a8c51e9644!2m2!1d100.3211572!2d5.4217272?entry=ttu" class="see-more-button">Direction</a>
+                </div>
+            </div>
+
+            <div class="event-card" data-id="restaurant4" data-type="Restaurant"data-state="perak" data-category="Asian" data-price="30">
+                <img src="Images/tiffin.jpg" alt="Tiffin" class="event-image">
+                <div class="event-content">
+                    <div class="event-title">Tiffin</div>
+                    <div class="event-category">Category: Asian</div>
+                    <div class="event-details">Address: Tiffin, 292, Jalan Sultan Idris Shah, 30000 Ipoh, Perak</div>
+                    <div class="event-details">Operation Hour: 6:00pm - 12:00am</div>
+                    <button class="add-to-wishlist">Add to Wishlist ♡</button>
+                    
+                </div>
+                <div class="see-more-container">
+                <div class="event-price">Price: $30</div>
+                <a href="https://www.google.com/maps/dir//292,+Jalan+Sultan+Idris+Shah,+30000+Ipoh,+Perak/@4.5947403,101.0076739,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31caec613a7a2d41:0x84af06bda50e7119!2m2!1d101.0900759!2d4.594745?entry=ttu" class="see-more-button">Direction</a>
+                </div>
+            </div>
+            
+            <div class="event-card" data-id="restaurant5" data-type="Restaurant"data-state="perak" data-category="Indian" data-price="40">
+                <img src="Images/tandoor.jpg" alt="tandoor grill" class="event-image">
+                <div class="event-content">
+                    <div class="event-title">Tandoor Grill</div>
+                    <div class="event-category">Category: Indian</div>
+                    <div class="event-details">Address: Tandoor Grill Ipoh, 9, Jalan Chin Choon Sam, 30450 Ipoh, Perak</div>
+                    <div class="event-details">Operation Hour: 11:30am – 3pm, 6 – 10:30pm</div>
+                    <button class="add-to-wishlist">Add to Wishlist ♡</button>
+                    
+                </div>
+                <div class="see-more-container">
+                <div class="event-price">Price: $40</div>
+                <a href="https://www.google.com/maps/dir//9,+Jalan+Chin+Choon+Sam,+30450+Ipoh,+Perak/@4.5993687,101.0156863,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31caec8b9df4ea31:0x3b22e0fc7412dc85!2m2!1d101.0980883!2d4.5993734?entry=ttu" class="see-more-button">Direction</a>
+                </div>
+            </div>
+
+            <div class="event-card" data-id="restaurant6" data-type="Restaurant"data-state="melaka" data-category="Western" data-price="30">
+                <img src="Images/hardrock.jpg" alt="Hard Rock Cafe Melaka" class="event-image">
+                <div class="event-content">
+                    <div class="event-title">Hard Rock Cafe Melaka</div>
+                    <div class="event-category">Category: Western</div>
+                    <div class="event-details">Address: Hard Rock Cafe Melaka, 28, Lorong Hang Jebat, 75200 Malacca</div>
+                    <div class="event-details">Operation Hour: 12:00pm – 12:00am</div>
+                    <button class="add-to-wishlist">Add to Wishlist ♡</button>
+                    
+                </div>
+                <div class="see-more-container">
+                <div class="event-price">Price: $30</div>
+                <a href="https://www.google.com/maps/dir//28,+Lorong+Hang+Jebat,+75200+Melaka/@2.1949445,102.1662946,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31d1f1dc263b37af:0x824d998ba619099e!2m2!1d102.2486966!2d2.1949468?entry=ttu" class="see-more-button">Direction</a>
+                </div>
+            </div>
+
+            <div class="event-card" data-id="restaurant7" data-type="Restaurant"data-state="selangor" data-category="Other" data-price="25">
+                <img src="Images/african.jpg" alt="Out of Africa Restaurant & Kudu Bar" class="event-image">
+                <div class="event-content">
+                    <div class="event-title">Out of Africa Restaurant & Kudu Bar</div>
+                    <div class="event-category">Category: Other</div>
+                    <div class="event-details">Address: Out of Africa Restaurant & Kudu Bar, PJ Palms Sport Centre, 1,l, Lorong Sultan, Pjs 52, 46200 Petaling Jaya, Selangor</div>
+                    <div class="event-details">Operation Hour: 12–2:00pm, 5–11:00pm</div>
+                    <button class="add-to-wishlist">Add to Wishlist ♡</button>
+                    
+                </div>
+                <div class="see-more-container">
+                <div class="event-price">Price: $25</div>
+                <a href="https://www.google.com/maps/dir//PJ+Palms+Sport+Centre,+1,l,+Lorong+Sultan,+Pjs+52,+46200+Petaling+Jaya,+Selangor/@3.1015278,101.5639598,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31cc4bdb3fc75469:0xb08e25b219644e23!2m2!1d101.6458759!2d3.1015236?entry=ttu" class="see-more-button">Direction</a>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="cuisine.js"></script>
+    <script src="default.js"></script>
+    <script src="login.js"></script>
+    <script src="wishlist.js"></script>
+
+</body>
+</html> 
