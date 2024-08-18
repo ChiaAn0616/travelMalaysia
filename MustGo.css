@@ -62,7 +62,7 @@
 }
 
 .describe:hover {
-    background-color: rgba(255, 255, 255, 1); 
+    background-color: rgba(255, 255, 255,1); 
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
     transform: scale(1.02); 
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; 

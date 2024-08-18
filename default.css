@@ -77,21 +77,19 @@ nav ul a {
     display: none;
 }
 
-@media screen and (max-width: 1008px) { 
-    /* ... existing media query ... */
-    nav ul::-webkit-scrollbar { 
-        display: none; 
-    }
 
-    nav a.logo{
-        font-size: 150%;
-    }
+nav ul::-webkit-scrollbar { 
+    display: none; 
+}
 
-    nav ul {
-        -ms-overflow-style: none;  
-        scrollbar-width: none; 
-        max-width: calc(65% - 40px); 
-    }
+nav a.logo{
+    font-size: 150%;
+}
+
+nav ul {
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+    max-width: calc(65% - 40px); 
 }
 
 
@@ -129,8 +127,7 @@ nav ul a {
 .footerContainer{
     font-family: 'Times New Roman', Times, serif;
     margin: 0;
-    padding: 0;
-    bottom: 0;
+    padding-top: 20px;
     width: 100%;
 }
 
@@ -140,7 +137,6 @@ nav ul a {
     padding: 20px;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     color: #8492e0;
-    bottom: 0;
 }
 
 .footer p {
@@ -258,40 +254,6 @@ body, html {
 }
 
 
-#tooltip {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    display: none; 
-    z-index: 10; 
-}
-
-#tooltip-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 30px;
-    height: 30px;
-    background-color: #333;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    cursor: pointer; /* Indicate it's interactive */
-}
-
-#tooltip-icon::before {
-    content: '\f0eb'; /* Unicode for lightbulb icon (Font Awesome) */
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    color: #fff;
-    font-size: 20px;
-}
 
 .share-btn {
     background-color: #8492e0; /* Blue background */
