@@ -75,11 +75,12 @@ h1, h2 {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s, transform 0.3s ease;
 }
 
 .apply-btn:hover {
     background-color:#e74ab8 ;
+    transform: scale(1.03); /* Slight zoom effect on hover */
 }
 
 .modal {
@@ -143,10 +144,12 @@ button[type="submit"] {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 button[type="submit"]:hover {
     background-color: #8492e0;
+    transform: scale(1.03); /* Slight zoom effect on hover */
 }
 
 #customTripSection {
@@ -197,36 +200,11 @@ button[type="submit"]:hover {
 .map-container {
     margin-top: 30px;
     height: 400px;
-    width: 80%; 
-    max-width: 1000px; 
+    width: 80%; /* Change this value as needed */
+    max-width: 1000px; /* Optional: limit the maximum width */
     margin-left: auto;
     margin-right: auto; /* Center the map */
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
-@media only screen and (max-width: 768px) {
-    .trip-card {
-        width: calc(50% - 10px); /* Two cards per row on tablets */
-    }
-    .container {
-        padding: 10px;
-    }
-    #customTripForm input, 
-    #customTripForm select, 
-    #customTripForm textarea {
-        font-size: 14px; /* Smaller font size on mobile */
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .trip-card {
-        width: 100%; /* One card per row on mobile */
-    }
-    .apply-btn, 
-    button[type="submit"] {
-        font-size: 14px; /* Smaller font size on mobile */
-        padding: 8px;
-    }
-}
-

@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flight Search</title>
+    <title>Flight Search - GoMalaysia</title>
     <link rel="stylesheet" href="flight.css">
     <link rel="stylesheet" href="default.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
         <!--background_vid added-->
@@ -19,6 +23,7 @@
     </main>
     <!--background_vid added-->
 
+    <!-- nav bar added -->
     <header>
         <nav>
           <input type="checkbox" id="check">
@@ -27,15 +32,16 @@
             <i class="fas fa-bars"></i>
           </label>
 
-          <a href="#home" class="logo kanit-black-italic">Travel Malaysia</a>
-
+          <a href="#home" class="logo kanit-black-italic">GO-MALAYSIA</a>
           <ul id="navigation">
+            
+
             <li><a href="home_page.html" class="btn">Home</a></li>
             <li><a href="MustGo.html" class="btn">MustGo</a></li>
-            <li><a href="#menu" class="btn">Menu</a></li>
+            <li><a href="attractions.html" class="btn">Destinations</a></li>
             <li><a href="application.html" class="btn">Apply</a></li>
-            <li><a href="events.html" class="btn active">Events</a></li>
-            <li><a href="contact.html" class="btn">Contact</a></li>
+            <li><a href="events.html" class="btn">Events</a></li>
+            <li><a href="plan_your_trip.html" class="btn active">Plan</a></li>
             <!-- Currency Selector -->
             <li>
                 <select id="currency-selector" class="currency-btn">
@@ -59,8 +65,14 @@
                     <option value="THB">THB (฿)</option>
                     <option value="USD">USD ($)</option>
                     <option value="VND">VND (₫)</option>
-                </select>
-            </li>
+                </select></li>
+            
+            <li><a href="culture.html" class="btn">Blogs</a></li>
+            <li><a href="contact.html" class="btn">Contact</a></li>
+            <li><a href="wishlist.html" class="btn">Wishlist</a></li>
+            <li><a href="login.html" class="btn" id="loginLink" onclick="saveCurrentPage()">Login</a></li>
+            
+            
           </ul>
       </nav>
     </header>
@@ -91,6 +103,25 @@
         </section>
     </main>
 
+    
+    <div class="footerContainer">
+        <footer class="footer">
+            <p>&copy; 2024 Travel Malaysia. All Rights Reserved.</p>
+            <p>Designed by Chin Zi Wei, Chia An, Lean Jin Hao, Tang Jia Hui</p>
+            <p>
+                <a href="https://www.instagram.com/malaysia.truly.asia?igsh=MTF3NGxoZWh4bml4Nw==" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/malaysia.travel.my?mibextid=ZbWKwL" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </p>
+            <p>
+              <button class="share-btn" onclick="shareWebsite()">Share This Website</button>
+          </p>
+        </footer>
+    </div>
+    <script src="login.js"></script>
     <script src="flight.js"></script>
     <script src="default.js"></script>
 

@@ -2,7 +2,6 @@
 let currentSlide = 0;
 const slides = document.querySelectorAll('.banner-slide');
 
-
 // Function to show a specific slide
 function showSlide(index) {
     slides.forEach((slide, i) => {
@@ -312,4 +311,5 @@ document.addEventListener('DOMContentLoaded', () => {
     updatePriceFilterSymbols();
     document.getElementById('currency-selector').value = currency;
 });
+
 

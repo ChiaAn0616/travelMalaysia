@@ -73,16 +73,24 @@ document.addEventListener('DOMContentLoaded', function () {
     const loginLink = document.getElementById('loginLink');
 
     if (loggedInUser) {
-        loginLink.textContent = loggedInUser;
+        loginLink.textContent = "Hi, " + loggedInUser + " (logout)";
         loginLink.href = '#';  // Optionally disable the link or redirect to a profile page
+
+        // Handle logout
+        loginLink.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const confirmed = confirm('Are you sure you want to log out?');
+        if (confirmed) {
+            localStorage.removeItem('loggedInUser'); // Remove user login
+            localStorage.removeItem('previousPage'); // Optionally clear previous page
+            alert('Logged out successfully!');
+            window.location.href = 'home_page.html'; // Redirect to home or login page
+        } else {
+            alert('Logout cancelled');
+        }
+});
     }
 });
 
-// Handle logout
-logoutLink.addEventListener('click', function (e) {
-    e.preventDefault();
-    localStorage.removeItem('loggedInUser'); // Remove user login
-    localStorage.removeItem('previousPage'); // Optionally clear previous page
-    alert('Logged out successfully!');
-    window.location.href = 'home_page.html'; // Redirect to home or login page
-});
+

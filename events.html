@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>Events and Happenings - Tourism Malaysia</title>
+    <title>Events and Happenings - GoMalaysia</title>
 </head>
 
 <body>
@@ -34,18 +34,16 @@
             <i class="fas fa-bars"></i>
           </label>
 
-          <a href="#home" class="logo kanit-black-italic">Travel Malaysia</a>
+          <a href="#home" class="logo kanit-black-italic">Go Malaysia</a>
 
           <ul id="navigation">
+            
+
             <li><a href="home_page.html" class="btn">Home</a></li>
             <li><a href="MustGo.html" class="btn">MustGo</a></li>
-            <li><a href="#menu" class="btn">Menu</a></li>
+            <li><a href="attractions.html" class="btn">Destinations</a></li>
             <li><a href="application.html" class="btn">Apply</a></li>
             <li><a href="events.html" class="btn active">Events</a></li>
-            <li><a href="contact.html" class="btn">Contact</a></li>
-            <li><a href="wishlist.html" class="btn">Wishlist</a></li>
-
-            
             <!-- Currency Selector -->
             <li>
                 <select id="currency-selector" class="currency-btn">
@@ -69,9 +67,14 @@
                     <option value="THB">THB (฿)</option>
                     <option value="USD">USD ($)</option>
                     <option value="VND">VND (₫)</option>
-                </select>
-            </li>
-            <button id="loginBtn"><a href="login.html" id="loginLink" onclick="saveCurrentPage()">Sign Up/Login</a></button>
+                </select></li>
+            <li><a href="plan_your_trip.html" class="btn">Plan</a></li>
+            <li><a href="culture.html" class="btn">Blogs</a></li>
+            <li><a href="contact.html" class="btn">Contact</a></li>
+            <li><a href="wishlist.html" class="btn">Wishlist</a></li>
+            <li><a href="login.html" class="btn" id="loginLink" onclick="saveCurrentPage()">Login</a></li>
+            
+            
           </ul>
       </nav>
     </header>
@@ -261,7 +264,7 @@
                 </div>
             </div>
 
-            <div class="event-card" data-id="event4" data-state="Malaysia" data-category="Sports" data-startdate="2024-08-28" data-enddate="2024-10-06" data-latitude="3.139007" data-longitude="101.686855" data-price="75">
+            <div class="event-card" data-id="event4" data-type="event" data-state="Malaysia" data-category="Sports" data-startdate="2024-08-28" data-enddate="2024-10-06" data-latitude="3.139007" data-longitude="101.686855" data-price="75">
                 <img src="Images/petronasRace.webp" alt="petronasRace" class="event-image">
                 <div class="event-content">
                     <div class="event-title">Petronas Le Tour De Langkawi 2024</div>
@@ -277,7 +280,7 @@
                 </div>
             </div>
 
-            <div class="event-card" data-id="event5" data-state="Selangor" data-category="Artsculture,Entertainment,Festival" data-startdate="2024-09-06" data-enddate="2024-09-08" data-latitude="3.139007" data-longitude="101.686855" data-price="75">
+            <div class="event-card" data-id="event5" data-type="event" data-state="Selangor" data-category="Artsculture,Entertainment,Festival" data-startdate="2024-09-06" data-enddate="2024-09-08" data-latitude="3.139007" data-longitude="101.686855" data-price="75">
                 <img src="Images/festivalSelangor.jpeg" alt="festivalSelangor" class="event-image">
                 <div class="event-content">
                     <div class="event-title">Festival Selangor @ Batu Laut</div>
@@ -293,7 +296,7 @@
                 </div>
             </div>
 
-            <div class="event-card" data-id="event6" data-state="Labuan" data-category="Artsculture" data-startdate="2024-09-27" data-enddate="2024-09-29" data-latitude="3.139007" data-longitude="101.686855" data-price="0">
+            <div class="event-card" data-id="event6" data-type="event" data-state="Labuan" data-category="Artsculture" data-startdate="2024-09-27" data-enddate="2024-09-29" data-latitude="3.139007" data-longitude="101.686855" data-price="0">
                 <img src="Images/borneoArtFestival.jpeg" alt="borneoArtFestival" class="event-image">
                 <div class="event-content">
                     <div class="event-title">Borneo Arts Festival 2024</div>
@@ -309,7 +312,7 @@
                 </div>
             </div>
 
-            <div class="event-card" data-id="event7" data-state="Kuala Lumpur" data-category="Artsculture" data-startdate="2024-10-03" data-enddate="2024-10-06" data-latitude="3.139007" data-longitude="101.686855" data-price="0">
+            <div class="event-card" data-id="event7" data-type="event" data-state="Kuala Lumpur" data-category="Artsculture" data-startdate="2024-10-03" data-enddate="2024-10-06" data-latitude="3.139007" data-longitude="101.686855" data-price="0">
                 <img src="Images/intac2024.png" alt="intac2024" class="event-image">
                 <div class="event-content">
                     <div class="event-title">International Tourism & Cultures Exhibition & Conference (INTAC 2024)</div>
@@ -325,7 +328,7 @@
                 </div>
             </div>
 
-            <div class="event-card" data-id="event8" data-state="Malacca" data-category="Artsculture, Entertainment, Festival" data-startdate="2024-10-25" data-enddate="2024-10-27" data-latitude="3.139007" data-longitude="101.686855" data-price="0">
+            <div class="event-card" data-id="event8" data-type="event" data-state="Malacca" data-category="Artsculture, Entertainment, Festival" data-startdate="2024-10-25" data-enddate="2024-10-27" data-latitude="3.139007" data-longitude="101.686855" data-price="0">
                 <img src="Images/FSSM.jpeg" alt="fssm" class="event-image">
                 <div class="event-content">
                     <div class="event-title">Festival Seni Selat Melaka</div>
@@ -341,7 +344,7 @@
                 </div>
             </div>
 
-            <div class="event-card" data-id="event9" data-state="Sabah" data-category="Music,Entertainment" data-startdate="2024-10-25" data-enddate="2024-10-27" data-latitude="3.139007" data-longitude="101.686855" data-price="0">
+            <div class="event-card" data-id="event9" data-type="event" data-state="Sabah" data-category="Music,Entertainment" data-startdate="2024-10-25" data-enddate="2024-10-27" data-latitude="3.139007" data-longitude="101.686855" data-price="0">
                 <img src="Images/rythmsOfKinabalu.png" alt="rythmsOfKinabalu" class="event-image">
                 <div class="event-content">
                     <div class="event-title">Rhythms of Kinabalu 2024</div>
@@ -360,6 +363,25 @@
         </div>
     </div>
 
+    
+    
+    <div class="footerContainer">
+        <footer class="footer">
+            <p>&copy; 2024 Travel Malaysia. All Rights Reserved.</p>
+            <p>Designed by Chin Zi Wei, Chia An, Lean Jin Hao, Tang Jia Hui</p>
+            <p>
+                <a href="https://www.instagram.com/malaysia.truly.asia?igsh=MTF3NGxoZWh4bml4Nw==" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/malaysia.travel.my?mibextid=ZbWKwL" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </p>
+            <p>
+              <button class="share-btn" onclick="shareWebsite()">Share This Website</button>
+          </p>
+        </footer>
+    </div>
     <script src="events.js"></script>
     <script src="default.js"></script>
     <script src="login.js"></script>

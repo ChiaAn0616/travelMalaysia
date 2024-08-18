@@ -269,7 +269,7 @@ document.getElementById('search-btn').addEventListener('click', function() {
             const from = iataCodes[0];
             const to = iataCodes[1];
 
-            const apiUrl = `https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=${from}&destinationLocationCode=${to}&departureDate=${date}&adults=1&max=1`;
+            const apiUrl = `https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=${from}&destinationLocationCode=${to}&departureDate=${date}&adults=1&max=5`;
 
             return fetch(apiUrl, {
                 method: 'GET',

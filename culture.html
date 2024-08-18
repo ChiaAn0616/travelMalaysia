@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Travel Blog - GoMalaysia</title>
+        <link rel="stylesheet" type="text/css" href="default.css">
+        <link rel="stylesheet" type="text/css" href="culture.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <!--background_vid added-->
+    <main class="wrapper">
+        <div class="video-container">
+            <video autoplay muted loop id="bgv">
+                <source src="background_vid.mp4" type="video/mp4">
+            </video>
+            <div class="overlay"></div>
+        </div>
+    </main>
+    <!--background_vid added-->
+
+
+    <!-- nav bar added -->
+    <header>
+      <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <a href="#home" class="logo kanit-black-italic">GO-MALAYSIA</a>
+      <ul id="navigation">
+        <li><a href="home_page.html" class="btn">Home</a></li>
+        <li><a href="MustGo.html" class="btn">MustGo</a></li>
+        <li><a href="attractions.html" class="btn">destinations</a></li>
+        <li><a href="application.html" class="btn">Apply</a></li>
+        <li><a href="events.html" class="btn">Events</a></li>
+        <li><a href="plan_your_trip.html" class="btn">Plan</a></li>
+        <li><a href="culture.html" class="btn active">Blogs</a></li>
+        <li><a href="contact.html" class="btn">Contact</a></li>
+        <li><a href="wishlist.html" class="btn">Wishlist</a></li>
+        <li><a href="login.html" class="btn" id="loginLink" onclick="saveCurrentPage()">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- nav bar added -->
+
+
+        <div class="sec">
+          <h1>Melaka trip: the eight best things to do in Melaka, Malaysia!</h1>
+          <div class="img">
+            <img src="Images/melaka.blog.jpg" alt="Melaka">
+          </div>
+
+          <div class="describe">
+            <b><p>In Melaka's streets where old meets new,</p>
+            <p>History's breath in every view.</p>
+            <p>Red walls whisper tales of yore,</p>
+            <p>Lanterns glow on river's shore.</p>
+            <p>A city where time gently weaves,</p>
+            <p>Past and present, in its leaves.</p>
+            <p>Melaka's charm, a timeless blend,</p>
+            <p>Where every step, a story paaa</p></b>
+          </div>
+          <div class="more_links">
+            <a href="https://www.charlotteplansatrip.com/en/malaysia/guide-melaka/">EXPLORE</a>
+          </div>
+        </div>
+
+
+        <div class="sec">
+          <h1>Itinerary Malaysian Borneo: 2 and 3 weeks of traveling through Sabah & Sarawak!</h1>
+          <div class="img">
+            <img src="Images/borneo.jpg" alt="Borneo">
+          </div>
+
+          <div class="describe">
+            <b><p>Borneo</p>
+            <p>Connection between soul and nature</p>
+            <p>Borneo is a dynamic mosaic of old rainforests, </p>
+            <p>unusual animals, </p>
+            <p>and rich cultural legacy where tradition and </p>
+            <p>environment coexist in wild,</p> 
+            <p>immortal harmony.</p></b>
+          </div>
+
+          <div class="more_links">
+            <a href="https://www.charlotteplansatrip.com/en/malaysia/itinerary-borneo/">EXPLORE</a>
+          </div>
+
+        </div>
+
+
+        <div class="sec">
+          <h1>Kuala Lumpur :<br>A short break in Kuala Lumpur</h1>
+          <div class="img">
+            <img src="Images/kualalumpur.jpg" alt="petronasTwinTowers">
+          </div>
+
+          <div class="describe">
+            <b><p>Kuala Lumpur is a bustling city that pulsates with </p>
+            <p>vitality and diversity.</p>
+            <p>Tall buildings, like the famous Petronas Twin Towers, </p>
+            <p>rise above busy streets, vibrant marketplaces, 
+              <p>and old temples.</p>
+            <p>Modernity blends with rich cultural history</p> 
+              <p>in this dynamic metropolis.</p></b>
+          </div>
+
+          <div class="more_links">
+            <a href="https://www.laidbacktrip.com/posts/kuala-lumpur-things-to-do">EXPLORE</a>
+          </div>
+
+        </div>
+
+        <div class="sec">
+          <h1>Taiping : Stunning Lake Gardens & Cool Mountain Retreats</h1>
+          <div class="img">
+            <img src="Images/taiping.jpg" alt="taiping">
+          </div>
+
+          <div class="describe">
+            <b><p>In Taiping’s calm, where rain gently falls,</p>
+            <p>Lakes and gardens embrace ancient walls,</p>
+            <p>Colonial charm and nature's embrace,</p>
+            <p>A tranquil retreat, a peaceful space</p></b>
+            <p></p>
+            <p></p>
+          </div>
+
+          <div class="more_links">
+            <a href="https://iwandered.net/things-to-do-taiping-malaysia/">EXPLORE</a>
+          </div>
+
+        </div>
+
+        <div class="sec">
+          <h1>Perak: A Tapestry of Heritage and Natural Splendor</h1>
+          <div class="img">
+            <img src="Images/perak.jpg" alt="taiping">
+          </div>
+
+          <div class="describe">
+            <b><p>Perak is a true gem, celebrated for its breathtaking natural </p>
+              <p>beauty and captivating cultural heritage. </p>
+              <p>With a fascinating history that traces back </p>
+              <p>to the British colonial era,</p>
+              <p>Perak’s foundations were laid through tin mining 
+              <p>and rubber tree plantations, </p>
+              <p>leaving behind a tangible legacy </p>
+              <p>can still be explored today.</p></b>
+          </div>
+
+          <div class="more_links">
+            <a href="https://iwandered.net/ipoh-taiping-perak-itinerary/">EXPLORE</a>
+          </div>
+
+        </div>
+  
+
+      <script src="login.js"></script>
+      <script src="default.js"></script>
+        
+    </body>
+</html>

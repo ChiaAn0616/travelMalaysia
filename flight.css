@@ -37,18 +37,21 @@ main {
 }
 
 button#search-btn {
-    background-color: #ff6600;
+    background-color: #626ca5;
     color: #fff;
+    font-weight: bold;
     padding: 12px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     width: 100%;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 button#search-btn:hover {
-    background-color: #e65c00;
+    background-color: #e74ab8;
+    transform: scale(1.03); /* Slight zoom effect on hover */
 }
 
 .results-container {
@@ -75,7 +78,7 @@ button#search-btn:hover {
 
 .flight-result .price {
     font-size: 24px;
-    color: #ff6600;
+    color: #626ca5;
     font-weight: bold;
     text-align: right;
 }

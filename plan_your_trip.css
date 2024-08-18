@@ -80,7 +80,7 @@ main {
 }
 
 .grid-item p{
-    font-size: 13px;
+    font-size: 14px;
     margin-top: 0px;
     z-index: 2;
 
@@ -91,22 +91,23 @@ main {
 }
 
 .grid-item button {
-    background-color: #dc3545;
+    background-color: #626ca5;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 7px;
     padding: 10px;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 15px;
     cursor: pointer;
     width: 100%;
     align-self: start;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s, transform 0.3s ease;
     z-index: 2;
 }
 
 .grid-item button:hover {
-    background-color: #c82333;
+    background-color: #e74ab8;
+    transform: scale(1.03); /* Slight zoom effect on hover */
 }
 
 /* Specific background images for each grid item */

@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchBar = document.getElementById('searchBar');
     const typeFilter = document.getElementById('typeFilter');
     const stateFilter = document.getElementById('stateFilter');
+    console.log(stateFilter);
     const sortFilter = document.getElementById('sortFilter');
 
     function renderWishlist(items) {
@@ -28,15 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateWishlist() {
-        const stateValue = stateFilter.value;
+        const stateValue = stateFilter.value.toLowerCase();
+        console.log(stateValue);
         const typeValue = typeFilter.value.toLowerCase(); // Convert to lowercase for matching
         const sortValue = sortFilter.value;
         const searchValue = searchBar.value.toLowerCase();
-
         const wishlist = JSON.parse(sessionStorage.getItem('wishlist')) || [];
 
         let filteredWishlist = wishlist.filter(item => {
-            return (stateValue === '' || item.state === stateValue) &&
+            return (stateValue === '' || item.state.toLowerCase() == stateValue) &&
                    (typeValue === '' || item.type === typeValue) &&
                    (item.title.toLowerCase().includes(searchValue) ||
                     item.category.toLowerCase().includes(searchValue) ||
@@ -135,31 +136,10 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 wishlist = wishlist.filter(item => item.id !== eventId);
                 sessionStorage.setItem('wishlist', JSON.stringify(wishlist));
-                alert('Removed from wishlist');
+                alert('Removedstate from wishlist');
                 updateButtonState(button, false);
             }
         });
     });
-
-    // Function to set the currency preference in a cookie
-function setCurrencyPreference(currency) {
-    document.cookie = "preferredCurrency=" + currency + "; path=/; expires=Fri, 31 Dec 9999 23:59:59 GMT";
-    updatePrices(currency); // Update prices immediately after setting the preference
-    updatePriceFilterSymbols(); // Update price filter symbols
-}
-
-// Function to get the currency preference from the cookie
-function getCurrencyPreference() {
-    const name = "preferredCurrency=";
-    const decodedCookie = decodeURIComponent(document.cookie);
-    const cookies = decodedCookie.split(';');
-    for (let i = 0; i < cookies.length; i++) {
-        let cookie = cookies[i].trim();
-        if (cookie.indexOf(name) === 0) {
-            return cookie.substring(name.length, cookie.length);
-        }
-    }
-    return null; // Return null if no preference is set
-}
 });
 

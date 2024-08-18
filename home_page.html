@@ -26,7 +26,12 @@
                 <li><a href="attractions.html" class="btn">Destinations</a></li>
                 <li><a href="application.html" class="btn">Apply</a></li>
                 <li><a href="events.html" class="btn">Events</a></li>
+                <li><a href="plan_your_trip.html" class="btn">Plan</a></li>
+                <li><a href="culture.html" class="btn">Blogs</a></li>
                 <li><a href="contact.html" class="btn">Contact</a></li>
+                <li><a href="wishlist.html" class="btn">Wishlist</a></li>
+                <li><a href="login.html" class="btn" id="loginLink" onclick="saveCurrentPage()">Login</a></li>
+                <!--<li><button id="loginBtn"><a href="login.html" id="loginLink" onclick="saveCurrentPage()">Sign Up/Login</a></button></li>-->
               </ul>
           </nav>
         </header>
@@ -140,8 +145,8 @@
           <div class="more_links">
             <a href="events.html">Events and Happenings</a>
             <a href="culture.html">Travel Blog</a>
-            <a href="cuisine.html">Plan Your Trip</a>
-            <a href="adventures.html">Trip Idea</a>
+            <a href="plan_your_trip.html">Plan Your Trip</a>
+            <a href="cuisine.html">Cuisine</a>
           </div>
         </div>
 
@@ -161,10 +166,31 @@
         <div id="tooltip">Please try LEFT SHIFT + SCROLL to check the remaining button in navigation bar if available. &emsp; </div>
         <div id="tooltip-icon"></div>
 
+        <div id="cookieConsentBanner" class="cookie-consent-banner">
+          <p>We use cookies to enhance your browsing experience. By continuing to use our site, you consent to our use of cookies.</p>
+          <button id="acceptCookies">Got it!</button>
+      </div>
 
-        <iframe src="footer.html" style="border: none; width: 100%; height: auto; overflow: hidden;" scrolling="no"></iframe>
+        <div class="footerContainer">
+          <footer class="footer">
+              <p>&copy; 2024 Travel Malaysia. All Rights Reserved.</p>
+              <p>Designed by Chin Zi Wei, Chia An, Lean Jin Hao, Tang Jia Hui</p>
+              <p>
+                  <a href="https://www.instagram.com/malaysia.truly.asia?igsh=MTF3NGxoZWh4bml4Nw==" target="_blank">
+                      <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="https://www.facebook.com/malaysia.travel.my?mibextid=ZbWKwL" target="_blank">
+                      <i class="fab fa-facebook"></i>
+                  </a>
+              </p>
+              <p>
+                <button class="share-btn" onclick="shareWebsite()">Share This Website</button>
+            </p>
+          </footer>
+      </div>
         <script src="home.js"></script>
         <script src="default.js"></script>
+        <script src="login.js"></script>
         
     </body>
 </html>
