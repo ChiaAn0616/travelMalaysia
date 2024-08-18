@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // ... (your existing smooth scrolling code) ...
         });
     });
-    
+
 
     // Ensure smooth scrolling to sections
     areas.forEach(area => {
@@ -84,9 +84,9 @@ window.addEventListener('scroll',  
     }
 });
 
-backToTopBtn.addEventListener('click',   
- () => {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and   
- Opera
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });

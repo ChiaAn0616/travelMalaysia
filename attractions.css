@@ -59,40 +59,23 @@ body{
     align-self: center;
 }
 
-#backToTopBtn {
-    display: none; /* Initially hidden */
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99; /* Ensure it's on top of other elements */
-    font-size: 20px;
-    border: none;
-    outline: none;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
-    color: white;
-    cursor: pointer;
-    padding: 10px 15px;
-    border-radius: 5px;
-}
 
 #backToTopBtn {
 
-    display: none; /* Initially hidden */
+    display: none; 
     position: fixed;
     z-index: 99;
-    /* Button Size */
-    width: 100px; /* Adjust as needed */
-    height: 60px; /* Adjust as needed */
-    font-size: 24px; /* Adjust as needed */
+    font-size: 50px; 
+    border: none;
+    outline: none;
   
-    /* Background and Border */
-    background-color: #007bff; /* Attractive blue */
-    border-radius: 10px; /* Makes it circular */
+    background-color: #f750e9; 
+    border-radius: 10px; 
   
     /* Other Styles */
     position: fixed; /* Stays in place */
     bottom: 20px; 
-    right: 60px;
+    right: 20px;
     opacity: 0.9; /* Slightly transparent */
     transition: all 0.3s ease; /* Smooth transitions */
   }
