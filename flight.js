@@ -37,11 +37,6 @@ function requestToken() {
 
 function getIATACode(cityName, token) {
 
-    // Hardcode Kuala Lumpur as Berlin
-    if (cityName === "Kuala Lumpur") {
-        return Promise.resolve("BER"); // Berlin's IATA code
-    }
-    
     const apiUrl = `https://test.api.amadeus.com/v1/reference-data/locations?subType=CITY,AIRPORT&keyword=${encodeURIComponent(cityName)}`;
 
     return fetch(apiUrl, {
