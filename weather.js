@@ -14,7 +14,7 @@ $(document).ready(function() {
     });
 
     function fetchWeatherData(city, apiKey) {
-        const currentWeatherUrl = `http://api.weatherstack.com/current?access_key=${apiKey}&query=${city}`;
+        const currentWeatherUrl = `https://api.weatherstack.com/current?access_key=${apiKey}&query=${city}`;
 
         $.ajax({
             url: currentWeatherUrl,
